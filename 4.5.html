@@ -14,8 +14,10 @@
 #ui-pm-work .kpi { cursor: pointer; }
 #ui-pm-work .ami-table tbody tr { cursor: pointer; }
 
+
 #MTR-102 #m102-tb.flash tr { animation: m102row .5s ease-in-out; }
 @keyframes m102row { from { background:#fff8e1; } to { background:transparent; } }
+
 
 /* global fallback to ensure modal always visible even if appended to body */
 .overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);display:flex;align-items:center;justify-content:center;z-index:9999}
@@ -23,6 +25,7 @@
 .modal header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #e8edf4}
 .modal .body{padding:12px 14px}
 .modal .foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 14px;border-top:1px solid #e8edf4}
+
 
 /* Button text visibility & sizing fix (scoped) */
 #MTR-102 .toolbar .btn,
@@ -40,9 +43,11 @@
 }
 #MTR-102 .btn.primary{ color:#fff !important; }
 
+
 #MTR-102 .panel-logs{border:1px solid #e8edf4;border-radius:14px;background:#fff;box-shadow:0 1px 2px rgba(12,17,29,.06);overflow:hidden}
 #MTR-102 .panel-logs header{padding:10px 12px;border-bottom:1px solid #e8edf4;font-weight:700;font-size:13px;background:#f8fafc}
 #MTR-102 .panel-logs .logbox{max-height:220px;overflow:auto;padding:8px}
+
 
 /* Strong button visibility overrides */
 #MTR-102 .toolbar .btn,
@@ -63,14 +68,17 @@
 #MTR-102 .toolbar .btn::before{ content:none !important; }
 #MTR-102 .in{ color:#111 !important; }
 
+
 #MTR-102 .panel-logs{border:1px solid #e8edf4;border-radius:14px;background:#fff;box-shadow:0 1px 2px rgba(12,17,29,.06);overflow:hidden;margin-top:12px}
 #MTR-102 .panel-logs header{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #e8edf4;font-weight:700;font-size:13px;line-height:1.2;color:#111;background:#f8fafc}
 #MTR-102 .panel-logs .logbox{max-height:220px;overflow:auto;padding:8px}
+
 
 /* Centered large modal */
 #MTR-102 .overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);display:flex;align-items:center;justify-content:center;z-index:9999}
 #MTR-102 .overlay .modal{width:min(900px,92vw);max-height:80vh}
 .overlay .modal{width:min(900px,92vw);max-height:80vh} /* global fallback */
+
 
 /* === PATCH v1.6: Align MTR-102 layout to AMI-style === */
 .widget#MTR-102{ background:linear-gradient(180deg, var(--card), rgba(255,255,255,.98)); }
@@ -1190,6 +1198,7 @@ const hue = id => TOP_HUE_MAP[id] ?? 221;
   });
 }
 
+
   
 /* ===== Permissions ===== */
 const USER_PERMS = Object.assign({ view:true, create:true, update:true, assign:true, publish:true }, (window.USER_PERMS||{}));
@@ -1512,6 +1521,7 @@ function bootMTRPage(){
     }
   });
 }
+
 
   /* ========= Charts (Modals) ========= */
   const modal = $('#kpi-modal');
@@ -2092,7 +2102,9 @@ function bootMTRPage(){
 </script>
 </div>
 
+
 <!-- [REMOVED LEAF STUB RENDERER BLOCK] -->
+
 
 <style id="mtr-upgrade-style">
 /* ===== MTR-001 UPGRADE (visual polish) ===== */
@@ -2142,6 +2154,7 @@ function bootMTRPage(){
 /* Responsive hide memo on narrow */
 @media(max-width:860px){ #ui-pm-work #tbl-mtr th:nth-child(5), #ui-pm-work #tbl-mtr td:nth-child(5){display:none} }
 </style>
+
 
 <script id="mtr-upgrade-script">
 (function(g){
@@ -2484,12 +2497,14 @@ function bootMTRPage(){
 })(window);
 </script>
 
+
 <style id="mtr-fullwidth-patch">
 /* === Full-width calendar patch === */
 #ui-pm-work .mtr-grid{ grid-template-columns: 1fr !important; }
 #ui-pm-work .mtr-grid > div:first-child { grid-column: 1 / -1; } /* calendar row spans full width */
 #ui-pm-work .calendar { width: 100%; }
 </style>
+
 
 <!-- ===================== MTR-002 (배정) · STYLE & SCRIPT INJECT ===================== -->
 <style id="mtr-assign-style">
@@ -2961,6 +2976,7 @@ function bootMTRPage(){
 </script>
 <!-- =================== END MTR-002 (배정) INJECT =================== -->
 
+
 <!-- ===================== MTR-101 (자동검침 AMI 현황) · STYLE & SCRIPT INJECT ===================== -->
 <style id="mtr-ami-style">
 :root{
@@ -3032,6 +3048,8 @@ function bootMTRPage(){
 #ui-pm-work .bar-mini{ height:6px; background:#eef2f7; border-radius:999px; overflow:hidden }
 #ui-pm-work .bar-mini>i{ display:block; height:100%; background:linear-gradient(90deg,var(--brand-500),var(--brand-700)); }
 </style>
+
+
 
 <script id="mtr-ami-script">
 (function(g){
@@ -3214,6 +3232,7 @@ function bootMTRPage(){
     const r = AMI.index?.[id]; if(!r) return;
     openModal('장치 상세', rowDetailHTML(r));
   }
+
 
   function permHTML(){
     const p = AMI.perm();
@@ -3439,7 +3458,9 @@ function bootMTRPage(){
 })(window);
 </script>
 
+
 <!-- =================== END MTR-101 (자동검침 AMI 현황) INJECT =================== -->
+
 
 <script id="ami-click-delegate">
 (function(){
@@ -3604,6 +3625,8 @@ function bootMTRPage(){
   document.addEventListener('keydown', onKey, true);   // capture
 })();
 </script>
+
+
 <script id="patch-assign-summary-move">
 (function(){
   function run(){
@@ -3715,44 +3738,6 @@ function bootMTRPage(){
 })();
 </script>
 
-<script id="patch-mtr102-eventlogs-card-v19">
-(function(){
-  function wrap(){
-    var root = document.getElementById('MTR-102');
-    if(!root) return;
-    var logs = root.querySelector('.mtr-logs');
-    if(!logs || logs.__wrapped__) return;
-    var card = document.createElement('section');
-    card.className = 'eventlogs-card assign-card';
-    card.innerHTML = '<h6 class="ev-title">이벤트/로그</h6>';
-    logs.parentNode.insertBefore(card, logs);
-    card.appendChild(logs);
-    logs.__wrapped__ = true;
-
-    var boxes = logs.querySelectorAll('.logbox');
-    if(boxes.length === 1){
-      var col1 = document.createElement('div'); col1.className='col';
-      var col2 = document.createElement('div'); col2.className='col';
-      logs.innerHTML = ''; logs.appendChild(col1); logs.appendChild(col2);
-      var title1 = document.createElement('div'); title1.className='pill-mini'; title1.textContent='작업 로그';
-      var title2 = document.createElement('div'); title2.className='pill-mini'; title2.textContent='푸시 로그';
-      var b1 = boxes[0]; col1.appendChild(title1); col1.appendChild(b1);
-      var b2 = document.createElement('div'); b2.className='logbox'; b2.id='m102-pushbox';
-      col2.appendChild(title2); col2.appendChild(b2);
-    }else{
-      var cols = logs.querySelectorAll('.col');
-      if(cols.length >= 2){
-        if(!cols[0].querySelector('.pill-mini')){ var t=document.createElement('div'); t.className='pill-mini'; t.textContent='작업 로그'; cols[0].insertBefore(t, cols[0].firstChild); }
-        if(!cols[1].querySelector('.pill-mini')){ var t2=document.createElement('div'); t2.className='pill-mini'; t2.textContent='푸시 로그'; cols[1].insertBefore(t2, cols[1].firstChild); }
-      }
-    }
-  }
-  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', wrap); }
-  else { setTimeout(wrap,0); }
-  new MutationObserver(wrap).observe(document.body,{childList:true,subtree:true});
-})();
-</script>
-
 <script id="patch-mtr101-dedup-buttons-v20">
 (function(){
   function ensure(){
@@ -3829,7 +3814,24 @@ function bootMTRPage(){
 })();
 </script>
 
+
+
+
+
 <!-- ===== MTR-102 (수동검침 입력) — DROP-IN MODULE ===== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style id="mtr101-round-fix">
 /* AMI 탭 상단/바깥 컨테이너 모서리 라운드 및 배경 정렬 (다른 탭 영향 없음) */
@@ -3851,7 +3853,9 @@ function bootMTRPage(){
   border:1px solid var(--border, #e5e7eb);
 }
 </style>
-<!-- === MTR-102 Overhaul v19 (KPI & Row popups + actionable header buttons) : BEGIN === -->
+
+</body></html>
+
 
 <script id="mtr102-hard-mount-v26">
 (function(){
@@ -4328,7 +4332,9 @@ function bootMTRPage(){
         { text:'적용', primary:true, onClick:(closeFn, mdl)=>{
             const txt = mdl.querySelector('#m102-csv-text')?.value || '';
             let cnt = 0;
-            txt.trim().split(/\r?\n/).forEach(line=>{
+            txt.trim().split(/
+?
+/).forEach(line=>{
               const [id,val] = line.split(',').map(s=>s && s.trim());
               const row = STATE.data.find(r=>r.id===id);
               if(row && val && !Number.isNaN(+val)){
