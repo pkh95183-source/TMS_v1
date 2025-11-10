@@ -4007,17 +4007,53 @@ function bootMTRPage(){
   let CURRENT_SECTION = null;
   let mounted = false;
 
-  function ensureHost(){
-    let host = document.querySelector('.vpage[data-vpage="MTR-102"]');
-    if(!host){
-      const vc = document.querySelector('.vcontent');
-      if(!vc) return null;
-      host = document.createElement('div');
-      host.className = 'vpage';
-      host.setAttribute('data-vpage','MTR-102');
-      vc.appendChild(host);
+  function findExistingHost(){
+    const selectors = [
+      '.vpage[data-vpage="MTR-102"]',
+      '.vpage#MTR-102',
+      '[data-page="MTR-102"]',
+      '[data-key="MTR-102"]',
+      '.tab-pane[data-mid="MTR-102"]',
+      '.tab-content[data-mid="MTR-102"]',
+      '#MTR-102'
+    ];
+    for(const sel of selectors){
+      const el = document.querySelector(sel);
+      if(!el) continue;
+      if(el.id === 'MTR-102' && el.tagName === 'SECTION'){
+        return el;
+      }
+      if(el.getAttribute && el.getAttribute('data-vpage') === 'MTR-102'){
+        return el;
+      }
+      if(!el.id || el.id !== 'MTR-102'){
+        return el;
+      }
     }
-    return host;
+    return null;
+  }
+
+  function ensureHost(){
+    const host = findExistingHost();
+    if(host) return host;
+    const containers = [
+      '.vcontent',
+      '.pm-vcontent',
+      '.page-content',
+      '.content-body',
+      '.right-area',
+      '.layout-right'
+    ];
+    for(const sel of containers){
+      const parent = document.querySelector(sel);
+      if(!parent) continue;
+      const node = document.createElement('div');
+      node.className = 'vpage';
+      node.setAttribute('data-vpage','MTR-102');
+      parent.appendChild(node);
+      return node;
+    }
+    return null;
   }
 
   function getRows(){
@@ -4500,24 +4536,22 @@ function bootMTRPage(){
     });
   }
 
-  function layoutHTML(rows){
+  function layoutContent(rows){
     return `
-      <section class="widget" id="MTR-102">
-        <header class="m102-header">
-          <h4>수동검침 입력(사진·GPS·오프라인)</h4>
-          <div class="m102-actions">
-            <button class="m102-hbtn" id="m102-upload">사진 업로드</button>
-            <button class="m102-hbtn" id="m102-gps">GPS 캡처</button>
-            <button class="m102-hbtn" id="m102-save">일괄 저장</button>
-            <button class="m102-hbtn" id="m102-csv">CSV 가져오기</button>
-            <button class="m102-hbtn" id="m102-sync">오프라인 동기화</button>
-          </div>
-        </header>
-        ${toolbarHTML()}
-        ${kpiHTML(rows)}
-        ${tableHTML(rows)}
-        ${logsHTML()}
-      </section>
+      <header class="m102-header">
+        <h4>수동검침 입력(사진·GPS·오프라인)</h4>
+        <div class="m102-actions">
+          <button class="m102-hbtn" id="m102-upload">사진 업로드</button>
+          <button class="m102-hbtn" id="m102-gps">GPS 캡처</button>
+          <button class="m102-hbtn" id="m102-save">일괄 저장</button>
+          <button class="m102-hbtn" id="m102-csv">CSV 가져오기</button>
+          <button class="m102-hbtn" id="m102-sync">오프라인 동기화</button>
+        </div>
+      </header>
+      ${toolbarHTML()}
+      ${kpiHTML(rows)}
+      ${tableHTML(rows)}
+      ${logsHTML()}
     `;
   }
 
@@ -4526,8 +4560,17 @@ function bootMTRPage(){
     if(!host) return;
     CURRENT_HOST = host;
     const rows = getRows();
-    host.innerHTML = layoutHTML(rows);
-    const section = host.querySelector('#MTR-102');
+    const markup = layoutContent(rows);
+    let section = null;
+    if(host.id === 'MTR-102' && host.tagName === 'SECTION'){
+      host.classList.add('widget');
+      host.innerHTML = markup;
+      section = host;
+    }else{
+      host.innerHTML = `<section class="widget" id="MTR-102">${markup}</section>`;
+      section = host.querySelector('#MTR-102');
+    }
+    if(!section) return;
     CURRENT_SECTION = section;
     bindFilters(section);
     bindHeaderButtons(section);
