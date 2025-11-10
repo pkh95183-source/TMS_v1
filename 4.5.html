@@ -14,10 +14,8 @@
 #ui-pm-work .kpi { cursor: pointer; }
 #ui-pm-work .ami-table tbody tr { cursor: pointer; }
 
-
 #MTR-102 #m102-tb.flash tr { animation: m102row .5s ease-in-out; }
 @keyframes m102row { from { background:#fff8e1; } to { background:transparent; } }
-
 
 /* global fallback to ensure modal always visible even if appended to body */
 .overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);display:flex;align-items:center;justify-content:center;z-index:9999}
@@ -25,7 +23,6 @@
 .modal header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #e8edf4}
 .modal .body{padding:12px 14px}
 .modal .foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 14px;border-top:1px solid #e8edf4}
-
 
 /* Button text visibility & sizing fix (scoped) */
 #MTR-102 .toolbar .btn,
@@ -43,11 +40,9 @@
 }
 #MTR-102 .btn.primary{ color:#fff !important; }
 
-
 #MTR-102 .panel-logs{border:1px solid #e8edf4;border-radius:14px;background:#fff;box-shadow:0 1px 2px rgba(12,17,29,.06);overflow:hidden}
 #MTR-102 .panel-logs header{padding:10px 12px;border-bottom:1px solid #e8edf4;font-weight:700;font-size:13px;background:#f8fafc}
 #MTR-102 .panel-logs .logbox{max-height:220px;overflow:auto;padding:8px}
-
 
 /* Strong button visibility overrides */
 #MTR-102 .toolbar .btn,
@@ -68,17 +63,14 @@
 #MTR-102 .toolbar .btn::before{ content:none !important; }
 #MTR-102 .in{ color:#111 !important; }
 
-
 #MTR-102 .panel-logs{border:1px solid #e8edf4;border-radius:14px;background:#fff;box-shadow:0 1px 2px rgba(12,17,29,.06);overflow:hidden;margin-top:12px}
 #MTR-102 .panel-logs header{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #e8edf4;font-weight:700;font-size:13px;line-height:1.2;color:#111;background:#f8fafc}
 #MTR-102 .panel-logs .logbox{max-height:220px;overflow:auto;padding:8px}
-
 
 /* Centered large modal */
 #MTR-102 .overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);display:flex;align-items:center;justify-content:center;z-index:9999}
 #MTR-102 .overlay .modal{width:min(900px,92vw);max-height:80vh}
 .overlay .modal{width:min(900px,92vw);max-height:80vh} /* global fallback */
-
 
 /* === PATCH v1.6: Align MTR-102 layout to AMI-style === */
 .widget#MTR-102{ background:linear-gradient(180deg, var(--card), rgba(255,255,255,.98)); }
@@ -1198,7 +1190,6 @@ const hue = id => TOP_HUE_MAP[id] ?? 221;
   });
 }
 
-
   
 /* ===== Permissions ===== */
 const USER_PERMS = Object.assign({ view:true, create:true, update:true, assign:true, publish:true }, (window.USER_PERMS||{}));
@@ -1521,7 +1512,6 @@ function bootMTRPage(){
     }
   });
 }
-
 
   /* ========= Charts (Modals) ========= */
   const modal = $('#kpi-modal');
@@ -2102,9 +2092,7 @@ function bootMTRPage(){
 </script>
 </div>
 
-
 <!-- [REMOVED LEAF STUB RENDERER BLOCK] -->
-
 
 <style id="mtr-upgrade-style">
 /* ===== MTR-001 UPGRADE (visual polish) ===== */
@@ -2154,7 +2142,6 @@ function bootMTRPage(){
 /* Responsive hide memo on narrow */
 @media(max-width:860px){ #ui-pm-work #tbl-mtr th:nth-child(5), #ui-pm-work #tbl-mtr td:nth-child(5){display:none} }
 </style>
-
 
 <script id="mtr-upgrade-script">
 (function(g){
@@ -2497,14 +2484,12 @@ function bootMTRPage(){
 })(window);
 </script>
 
-
 <style id="mtr-fullwidth-patch">
 /* === Full-width calendar patch === */
 #ui-pm-work .mtr-grid{ grid-template-columns: 1fr !important; }
 #ui-pm-work .mtr-grid > div:first-child { grid-column: 1 / -1; } /* calendar row spans full width */
 #ui-pm-work .calendar { width: 100%; }
 </style>
-
 
 <!-- ===================== MTR-002 (배정) · STYLE & SCRIPT INJECT ===================== -->
 <style id="mtr-assign-style">
@@ -2976,7 +2961,6 @@ function bootMTRPage(){
 </script>
 <!-- =================== END MTR-002 (배정) INJECT =================== -->
 
-
 <!-- ===================== MTR-101 (자동검침 AMI 현황) · STYLE & SCRIPT INJECT ===================== -->
 <style id="mtr-ami-style">
 :root{
@@ -3048,8 +3032,6 @@ function bootMTRPage(){
 #ui-pm-work .bar-mini{ height:6px; background:#eef2f7; border-radius:999px; overflow:hidden }
 #ui-pm-work .bar-mini>i{ display:block; height:100%; background:linear-gradient(90deg,var(--brand-500),var(--brand-700)); }
 </style>
-
-
 
 <script id="mtr-ami-script">
 (function(g){
@@ -3232,7 +3214,6 @@ function bootMTRPage(){
     const r = AMI.index?.[id]; if(!r) return;
     openModal('장치 상세', rowDetailHTML(r));
   }
-
 
   function permHTML(){
     const p = AMI.perm();
@@ -3458,9 +3439,7 @@ function bootMTRPage(){
 })(window);
 </script>
 
-
 <!-- =================== END MTR-101 (자동검침 AMI 현황) INJECT =================== -->
-
 
 <script id="ami-click-delegate">
 (function(){
@@ -3625,400 +3604,6 @@ function bootMTRPage(){
   document.addEventListener('keydown', onKey, true);   // capture
 })();
 </script>
-
-
-<style id="mtr102-autofix-style">
-:root{
-  --brand:#2563eb; --brand2:#1d4ed8; --border:#e8edf4; --ink:#0f172a; --muted:#6b7280;
-}
-/* Keep left nav labels one line */
-#ui-pm-work .mid{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-/* Scope styles */
-#MTR-102{padding:12px}
-#MTR-102 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;border:1px solid var(--border);border-radius:14px 14px 0 0;background:linear-gradient(180deg,#fff,#fbfdff)}
-#MTR-102 .in{height:34px;padding:0 12px;border:1px solid var(--border);border-radius:10px;background:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.6);font-size:13px}
-#MTR-102 .select{width:140px;appearance:none;padding-right:26px;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M6 8l4 4 4-4' stroke='%236b7280' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 6px center;}
-#MTR-102 .btn{height:32px;padding:0 12px;border:1px solid var(--border);border-radius:10px;background:#fff;font-size:13px;cursor:pointer color:#1f2937;}
-#MTR-102 .btn.primary{background:linear-gradient(180deg,#3b82f6,#2563eb);color:#fff;border-color:#2563eb}
-#MTR-102 .kpi-grid{display:grid;gap:14px;margin:12px 0 16px;grid-template-columns: repeat(3, minmax(0, 1fr)); width:100%; grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; margin-left:0; margin-right:0;  grid-template-columns:repeat(3,minmax(0,1fr)); width:100%; gap:14px; margin:12px 0 16px; padding:0 12px; }
-#MTR-102 .kpi{height:100%;border:1px solid var(--border);border-radius:14px;background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;box-shadow:0 1px 2px rgba(12,17,29,.06);cursor:pointer}
-#MTR-102 .kpi h6{margin:0 0 8px;font-weight:800;font-size:13px}
-#MTR-102 .kpi .big{font-weight:800;font-size:20px}
-#MTR-102 .kpi .muted{font-size:12px;color:#6b7280}
-#MTR-102 .bar{height:8px;background:#eef2f7;border-radius:999px;overflow:hidden}
-#MTR-102 .bar i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#1d4ed8)}
-#MTR-102 .panel{border:1px solid var(--border);border-radius:0 0 14px 14px;background:#fff;box-shadow:0 1px 2px rgba(12,17,29,.06);overflow:hidden}
-#MTR-102 .table-wrap{max-height:420px;overflow:auto}
-#MTR-102 table{width:100%;border-collapse:separate;border-spacing:0}
-#MTR-102 thead th{position:sticky;top:0;background:#f8fafc;border-bottom:1px solid var(--border);font-weight:700;font-size:13px;padding:10px;z-index:1;text-align:left}
-#MTR-102 tbody td{border-bottom:1px solid var(--border);padding:10px;font-size:13px}
-#MTR-102 tbody tr:hover{background:#fbfdff}
-#MTR-102 .status{display:inline-flex;align-items:center;gap:6px;height:20px;padding:0 8px;border-radius:999px;border:1px solid var(--border);font-size:11px}
-#MTR-102 .status.ok{background:#ecfdf5;color:#065f46;border-color:#d1fae5}
-#MTR-102 .status.warn{background:#fffbeb;color:#92400e;border-color:#fde68a}
-#MTR-102 .status.bad{background:#fef2f2;color:#991b1b;border-color:#fecaca}
-#MTR-102 .logs{padding:12px;background:#fcfdff;border-top:1px dashed var(--border)}
-#MTR-102 .logbox{border:1px solid var(--border);border-radius:14px;background:#fff;max-height:200px;overflow:auto;padding:8px}
-#MTR-102 .logbox .item{display:flex;gap:8px;padding:6px 4px;border-bottom:1px dashed #eef2f7;align-items:center}
-#MTR-102 .overlay{position:fixed;inset:0;background:rgba(15,23,42,.42);display:flex;align-items:center;justify-content:center;z-index:9999}
-#MTR-102 .modal{width:min(720px,92vw);max-height:78vh;overflow:auto;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,.25);border:1px solid var(--border)}
-#MTR-102 .modal header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border)}
-#MTR-102 .modal .body{padding:12px 14px}
-#MTR-102 .modal .foot{display:flex;justify-content:flex-end;gap:8px;padding:12px 14px;border-top:1px solid var(--border)}
-#MTR-102 .toast{position:fixed;right:18px;bottom:18px;background:#111827;color:#fff;border-radius:10px;padding:10px 12px;font-size:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:10000}
-</style>
-
-<script id="mtr102-autofix-script">
-(function(){
-  if (window.__MTR102_AUTOFIX__) return; window.__MTR102_AUTOFIX__ = true;
-
-  const MAN = { data:[], filtered:[], perms:{view:true,create:true,update:true,import:true,export:true} };
-  if (window.USER_PERMS) Object.assign(MAN.perms, window.USER_PERMS);
-
-  /* dummy data */
-  function R(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
-  function P(a){ return a[R(0,a.length-1)]; }
-  const complexes=['래미안A','래미안B','자이A','자이B','푸르지오C'];
-  const dongs=['101동','102동','103동','104동','105동'];
-  const hos=['101호','102호','103호','104호','105호','1101호','1203호','1410호'];
-  const utils=['전기','가스','수도'];
-  const staffs=['김현수','박지민','이서준','최민호','오지우'];
-  const batches=['1차','2차','3차'];
-  function makeRows(n){
-    const rows=[];
-    for(let i=0;i<n;i++){
-      const u=P(utils), cx=P(complexes), dg=P(dongs), ho=P(hos);
-      const id = (u==='전기'?'전기':'가스') + (40000+i);
-      rows.push({
-        id, util:u, complex:cx, dong:dg, ho:ho, staff:P(staffs), batch:P(batches),
-        ts: new Date(Date.now()-R(1,72)*3600*1000),
-        value: R(1180,1320),
-        photo: Math.random()>0.2?'검증':(Math.random()>0.5?'확인필요':'미수신'),
-        gps: Math.random()>0.25,
-        quality: P(['양호','B','오류']),
-        memo:''
-      });
-    }
-    return rows;
-  }
-  MAN.data = makeRows(36);
-
-  function fmtTS(d){ const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`; }
-  function pct(a,b){ return b? Math.round(a/b*100):0; }
-
-  function kpi(rows){
-    const off = rows.filter(r=>r.photo==='미수신').length;
-    const rechk = rows.filter(r=>r.photo==='확인필요').length;
-    const ok = rows.filter(r=>r.photo==='검증').length;
-    const okp = pct(ok, rows.length);
-    return `<div class="kpi-grid" id="mtr-kpis">
-      <div class="kpi" data-k="offline"><h6>오프라인 대기건</h6><div class="big">${off}건</div><div class="bar"><i style="width:${pct(off,rows.length)}%"></i></div><div class="muted">총 ${rows.length}건 중</div></div>
-      <div class="kpi" data-k="recheck"><h6>재검침 요청건</h6><div class="big">${rechk}건</div><div class="bar"><i style="width:${pct(rechk,rows.length)}%"></i></div><div class="muted">확인필요 상태</div></div>
-      <div class="kpi" data-k="photo"><h6>사진 검증상태</h6><div class="big">${okp}%</div><div class="bar"><i style="width:${okp}%"></i></div><div class="muted">정상 비율</div></div>
-    </div>`;
-  }
-
-  function toolbar(){
-    return `<div class="toolbar mtr-toolbar">
-      <input class="in" style="width:220px" placeholder="계량기ID/주소/메모 검색" id="q" class="search"/>
-      <select class="in select" data-k="complex"><option>단지 전체</option>래미안A</select>
-      <select class="in select" data-k="dong"><option>동 전체</option>101동</select>
-      <select class="in select" data-k="ho"><option>호 전체</option>101호</select>
-      <select class="in select" data-k="staff"><option>담당자 전체</option>김현수</select>
-      <select class="in select" data-k="batch"><option>배치 전체</option>1차</select>
-      <select class="in select" data-k="rechk"><option>재검침 여부</option><option>요청</option><option>해제</option></select>
-      <div style="flex:1"></div>
-    </div>`;
-  }
-
-  function table(rows){
-    const trs = rows.map((r,i)=>`
-      <tr data-i="${i}">
-        <td>${r.id}</td>
-        <td>${r.complex} ${r.dong} ${r.ho}</td>
-        <td>${fmtTS(r.ts)}</td>
-        <td style="text-align:right">${r.value.toLocaleString()}</td>
-        <td>${r.photo==='검증'?'<span class="status ok">검증</span>':(r.photo==='확인필요'?'<span class="status warn">확인필요</span>':'<span class="status bad">미수신</span>')}</td>
-        <td>${r.gps?'<span class="status ok">GPS</span>':'<span class="status">없음</span>'}</td>
-        <td>${r.quality}</td>
-        <td>${r.memo||''}</td>
-      </tr>
-    `).join('');
-    return `<div class="panel"><div class="table-wrap"><table>
-      <thead><tr>
-        <th style="width:120px">계량기ID</th>
-        <th>단지/동/호</th>
-        <th style="width:160px">검침시각</th>
-        <th style="width:90px">입력값</th>
-        <th style="width:120px">사진</th>
-        <th style="width:110px">GPS</th>
-        <th style="width:90px">품질</th>
-        <th>메모</th>
-      </tr></thead>
-      <tbody id="m102-tb">${trs}</tbody>
-    </table></div></div>`;
-  }
-
-  function populateToolbarOptions(root){
-    const selects = {
-      complex: new Set(MAN.data.map(r=>r.complex)),
-      dong   : new Set(MAN.data.map(r=>r.dong)),
-      ho     : new Set(MAN.data.map(r=>r.ho)),
-      staff  : new Set(MAN.data.map(r=>r.staff)),
-      batch  : new Set(MAN.data.map(r=>r.batch))
-    };
-    Object.entries(selects).forEach(([k, set])=>{
-      const sel = root.querySelector(`.toolbar .select[data-k="${k}"]`);
-      if(!sel) return;
-      const label = (k==='complex'?'단지 전체': k==='dong'?'동 전체': k==='ho'?'호 전체': k==='staff'?'담당자 전체':'배치 전체');
-      const opts = [`<option>${label}</option>`].concat(Array.from(set).sort().map(v=>`<option value="${v}">${v}</option>`));
-      sel.innerHTML = opts.join('');
-    });
-  }
-
-  function logs(){
-    return `<div class="mtr-logs event-logs"><div><div class="pill-mini">작업 로그</div>
-      <div class="logbox" id="m102-logbox">
-        <div class="item"><span class="status">INFO</span><span>${new Date().toLocaleString()} · 페이지 로드</span></div>
-      </div>
-    </div></div>`;
-  }
-
-  function openModal(title, body){
-    const host = (window.__MTR102_HOST__ && window.__MTR102_HOST__.querySelector('#MTR-102')) || document.querySelector('#MTR-102') || document.body;
-    const ov = document.createElement('div'); ov.className='overlay';
-    ov.innerHTML = `<div class="modal">
-      <header><b>${title}</b><button class="btn act-close">닫기</button></header>
-      <div class="body">${body}</div>
-      <div class="foot"><button class="btn act-close">확인</button></div>
-    </div>`;
-    host.appendChild(ov);
-    ov.addEventListener('click', (e)=>{ if(e.target.classList.contains('overlay') || e.target.classList.contains('act-close')) ov.remove(); });
-  }
-  function log(kind,msg){
-    const box = document.querySelector('#m102-logbox'); if(!box) return;
-    const it = document.createElement('div'); it.className='item';
-    it.innerHTML = `<span class="status">${kind}</span><span>${new Date().toLocaleString()} · ${msg}</span>`;
-    box.appendChild(it); box.scrollTop = box.scrollHeight;
-  }
-  function toast(msg){
-    const t=document.createElement('div'); t.className='toast'; t.textContent=msg; (document.querySelector('#MTR-102')||document.body).appendChild(t); setTimeout(()=>t.remove(),1600);
-  }
-  function getToolbarState(root){
-    const s = {};
-    const q = root.querySelector('#q'); s.q = (q && q.value || '').trim();
-    root.querySelectorAll('.toolbar .select').forEach(el=>{
-      s[el.getAttribute('data-k')] = el.value;
-    });
-    return s;
-  }
-  function applyFilter(root){
-    const st = getToolbarState(root);
-    MAN.filtered = MAN.data.filter(r=>{
-      if (st.q && !(r.id.includes(st.q) || r.complex.includes(st.q) || r.dong.includes(st.q) || r.ho.includes(st.q) || (r.memo||'').includes(st.q))) return false;
-      if (st.complex && st.complex!=='단지 전체' && r.complex!==st.complex) return false;
-      if (st.dong && st.dong!=='동 전체' && r.dong!==st.dong) return false;
-      if (st.ho && st.ho!=='호 전체' && r.ho!==st.ho) return false;
-      if (st.staff && st.staff!=='담당자 전체' && r.staff!==st.staff) return false;
-      if (st.batch && st.batch!=='배치 전체' && r.batch!==st.batch) return false;
-      if (st.rechk && st.rechk!=='재검침 여부'){
-        const isReq = (r.photo==='확인필요');
-        if (st.rechk==='요청' && !isReq) return false;
-        if (st.rechk==='해제' && isReq) return false;
-      }
-      return true;
-    });
-    // Update KPI and table
-    const rootEl = root.querySelector('#MTR-102');
-    if (!rootEl) return;
-    const rows = MAN.filtered.length?MAN.filtered:MAN.data;
-    const kpiHost = root.querySelector('#mtr-kpis');
-    if (kpiHost) kpiHost.outerHTML = kpi(rows);
-    const tb = root.querySelector('#m102-tb');
-    if (tb){
-      const trs = rows.map((r,i)=>`
-        <tr data-i="${i}">
-          <td>${r.id}</td>
-          <td>${r.complex} ${r.dong} ${r.ho}</td>
-          <td>${fmtTS(r.ts)}</td>
-          <td style="text-align:right">${r.value.toLocaleString()}</td>
-          <td>${r.photo==='검증'?'<span class="status ok">검증</span>':(r.photo==='확인필요'?'<span class="status warn">확인필요</span>':'<span class="status bad">미수신</span>')}</td>
-          <td>${r.gps?'<span class="status ok">GPS</span>':'<span class="status">없음</span>'}</td>
-          <td>${r.quality}</td>
-          <td>${r.memo||''}</td>
-        </tr>
-      `).join('');
-      tb.innerHTML = trs;
-      tb.classList.add('flash'); setTimeout(()=>tb.classList.remove('flash'), 500);
-      // Re-bind row clicks
-      tb.querySelectorAll('tr').forEach(tr=>{
-        tr.addEventListener('click', ()=>{
-          const i = Number(tr.getAttribute('data-i'));
-          const src = MAN.filtered.length?MAN.filtered:MAN.data;
-          const r = src[i];
-          openModal('상세 정보', `<table class="detail">
-            <tr><td>계량기ID</td><td>${r.id}</td></tr>
-            <tr><td>주소</td><td>${r.complex} ${r.dong} ${r.ho}</td></tr>
-            <tr><td>검침시각</td><td>${fmtTS(r.ts)}</td></tr>
-            <tr><td>입력값</td><td>${r.value.toLocaleString()}</td></tr>
-            <tr><td>사진</td><td>${r.photo}</td></tr>
-            <tr><td>GPS</td><td>${r.gps?'정상':'없음'}</td></tr>
-            <tr><td>품질</td><td>${r.quality}</td></tr>
-          </table>`);
-          log('ROW', `${r.id} 상세 조회`);
-        });
-      });
-    }
-    log('FILTER', `필터 적용 (${MAN.filtered.length} / ${MAN.data.length})`);
-  }
-
-
-  function bind(root){
-    // KPI
-    root.querySelectorAll('.kpi').forEach(card=>{
-      card.addEventListener('click', ()=>{
-        const k = card.getAttribute('data-k');
-        if(k==='offline'){
-          const list = (MAN.filtered.length?MAN.filtered:MAN.data).filter(r=>r.photo==='미수신').slice(0,20)
-            .map(r=>`<li>${r.id} · ${r.complex} ${r.dong} ${r.ho}</li>`).join('');
-          openModal('오프라인 대기건', `<ol>${list || '<p>없음</p>'}</ol>`);
-          log('KPI','오프라인 대기건');
-        }else if(k==='recheck'){
-          const list = (MAN.filtered.length?MAN.filtered:MAN.data).filter(r=>r.photo==='확인필요').slice(0,20)
-            .map(r=>`<li>${r.id} · ${r.complex} ${r.dong} ${r.ho}</li>`).join('');
-          openModal('재검침 요청건', `<ol>${list || '<p>없음</p>'}</ol>`);
-          log('KPI','재검침 요청건');
-        }else{
-          const rows = MAN.filtered.length?MAN.filtered:MAN.data;
-          const ok = rows.filter(r=>r.photo==='검증').length;
-          openModal('사진 검증상태', `<p>정상 ${ok}건 / 총 ${rows.length}건</p>`);
-          log('KPI','사진 검증상태');
-        }
-      });
-    });
-    // row -> detail
-    root.querySelectorAll('#m102-tb tr').forEach(tr=>{
-      tr.addEventListener('click', ()=>{
-        root.querySelectorAll('#m102-tb tr').forEach(r=>r.classList.remove('sel'));
-        tr.classList.add('sel');
-        const i=+tr.getAttribute('data-i');
-        const r=(MAN.filtered.length?MAN.filtered:MAN.data)[i];
-        openModal('세부 데이터', `<table>
-          <tr><td>계량기ID</td><td>${r.id}</td></tr>
-          <tr><td>주소</td><td>${r.complex} ${r.dong} ${r.ho}</td></tr>
-          <tr><td>유틸리티</td><td>${r.util}</td></tr>
-          <tr><td>담당자</td><td>${r.staff}</td></tr>
-          <tr><td>배치</td><td>${r.batch}</td></tr>
-          <tr><td>검침시각</td><td>${fmtTS(r.ts)}</td></tr>
-          <tr><td>입력값</td><td>${r.value}</td></tr>
-          <tr><td>사진</td><td>${r.photo}</td></tr>
-          <tr><td>GPS</td><td>${r.gps?'정상':'없음'}</td></tr>
-          <tr><td>품질</td><td>${r.quality}</td></tr>
-        </table>`);
-        log('ROW', `${r.id} 상세 조회`);
-      });
-    });
-    // actions
-    const tb = root.querySelector('.toolbar');
-    const hdr = root.querySelector('header');
-    if(hdr){
-      ['.act-upload','.act-gps','.act-save','.act-csv','.act-sync'].forEach(sel=>{ const h = hdr.querySelector(sel); if(h){ /* keep default onclick if set */ } });
-    }
-
-    log('UPLOAD','사진 업로드'); });
-    log('GPS','GPS 캡처'); });
-    log('SAVE','일괄 저장'); });
-    log('IMPORT','CSV 가져오기'); });
-    // search & filters
-    const search = root.querySelector('#q');
-    if (search){ search.addEventListener('input', ()=> applyFilter(root)); }
-    root.querySelectorAll('.toolbar .select').forEach(el=>{
-      el.addEventListener('change', ()=> applyFilter(root));
-    });
-     log('SYNC','오프라인 동기화'); });
-  }
-
-  function renderInto(host){
-    window.__MTR102_RENDER__ = renderInto; document.addEventListener('mtr102:mount', function(ev){ try{ renderInto(ev && ev.detail && ev.detail.host ? ev.detail.host : (document.querySelector('.vpage[data-vpage="MTR-102"]')||document.body)); }catch(e){ console.error(e); } }, false);
- window.__MTR102_HOST__ = host;
-    const rows = MAN.filtered.length?MAN.filtered:MAN.data;
-    host.innerHTML = `
-      <section class="widget" id="MTR-102"><header><h4>수동검침 입력</h4><div class="row-actions"><button class="iconbtn act-upload">사진 업로드</button><button class="iconbtn act-gps">GPS 캡처</button><button class="iconbtn act-save">일괄 저장</button><button class="iconbtn act-csv">CSV 가져오기</button><button class="iconbtn act-sync">오프라인 동기화</button></div></header>${toolbar()}${kpi(rows)}<div class="mtr-grid">${table(rows)}<div class="mtr-logs"><div><div class="pill-mini">작업 로그</div><div class="logbox" id="m102-logbox"></div></div></div></div></section>`;
-    populateToolbarOptions(host.querySelector('#MTR-102'));
-
-    bind(host.querySelector('#MTR-102'));
-  }
-
-  function findHost(){
-    return document.querySelector('.vpage[data-vpage="MTR-102"]')
-        || document.querySelector('.vpage#MTR-102')
-        || document.querySelector('[data-page="MTR-102"]')
-        || document.querySelector('[data-key="MTR-102"]')
-        || null;
-  }
-  function teardown(){
-    const host = findHost();
-    if(!host) return;
-    const sec = host.querySelector('#MTR-102');
-    if(sec){ sec.remove(); }
-    const overlays = host.querySelectorAll('.overlay');
-    overlays.forEach(n=>n.remove());
-    host.__mtr102mounted = false;
-  }
-  function mount(){
-    const host = findHost(); if(!host) return;
-    if (host.__mtr102Mounted) return;
-    host.__mtr102Mounted = true;
-    renderInto(host);
-  }
-
-  // autorun
-  document.addEventListener('DOMContentLoaded', ()=>{ setTimeout(mount, 0); setTimeout(mount, 300); setTimeout(mount, 1200); });
-  window.addEventListener('hashchange', ()=> setTimeout(mount,0));
-  document.addEventListener('click', (e)=>{
-    const m = e.target.closest('.mid'); 
-    if (m && /수동검침 입력/.test((m.textContent||'').trim())) setTimeout(mount,0);
-  }, true);
-  try{ new MutationObserver(()=> setTimeout(mount,0)).observe(document.body,{childList:true,subtree:true}); }catch(e){}
-})();
-
-  // Unmount when host disappears from DOM or becomes hidden (switch tab)
-  document.addEventListener('click', (e)=>{
-    const mid = e.target.closest('.mid');
-    if(mid && !/수동검침 입력/.test((mid.textContent||''))){
-      // switching to other tab; defer teardown
-      setTimeout(()=>{ teardown(); }, 0);
-    }
-  }, true);
-  window.addEventListener('hashchange', ()=> setTimeout(()=>{ const host=findHost(); if(!host || host.offsetParent===null) teardown(); },0));
-  new MutationObserver(()=>{ const host=findHost(); if(!host || host.offsetParent===null || !document.body.contains(host)) teardown(); }).observe(document.body,{childList:true,subtree:true});
-
-  // Robust row click delegation
-  document.addEventListener('click', function(e){
-    const tr = e.target.closest('#MTR-102 #m102-tb tr');
-    if(!tr) return;
-    const root = document.querySelector('#MTR-102'); if(!root) return;
-    const i = Number(tr.getAttribute('data-i'));
-    const src = (MAN.filtered && MAN.filtered.length?MAN.filtered:MAN.data);
-    const r = src[i];
-    openModal('세부 데이터', `<table>
-      <tr><td>계량기ID</td><td>${r.id}</td></tr>
-      <tr><td>주소</td><td>${r.complex} ${r.dong} ${r.ho}</td></tr>
-      <tr><td>유틸리티</td><td>${r.util}</td></tr>
-      <tr><td>담당자</td><td>${r.staff}</td></tr>
-      <tr><td>배치</td><td>${r.batch}</td></tr>
-      <tr><td>검침시각</td><td>${fmtTS(r.ts)}</td></tr>
-      <tr><td>입력값</td><td>${r.value}</td></tr>
-      <tr><td>사진</td><td>${r.photo}</td></tr>
-      <tr><td>GPS</td><td>${r.gps?'정상':'없음'}</td></tr>
-      <tr><td>품질</td><td>${r.quality}</td></tr>
-    </table>`);
-    log('ROW', `${r.id} 상세 조회`);
-  }, true);
-</script>
-
 <script id="patch-assign-summary-move">
 (function(){
   function run(){
@@ -4244,24 +3829,7 @@ function bootMTRPage(){
 })();
 </script>
 
-
-
-
-
 <!-- ===== MTR-102 (수동검침 입력) — DROP-IN MODULE ===== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style id="mtr101-round-fix">
 /* AMI 탭 상단/바깥 컨테이너 모서리 라운드 및 배경 정렬 (다른 탭 영향 없음) */
@@ -4283,1195 +3851,705 @@ function bootMTRPage(){
   border:1px solid var(--border, #e5e7eb);
 }
 </style>
-
-<style id="mtr102-ami-clone-skin">
-/* 수동검침 탭을 AMI 현황 탭과 시각적으로 일치시키는 스킨 */
-.vpage[data-vpage="MTR-102"],
-.vpage#MTR-102,
-[data-page="MTR-102"],
-[data-key="MTR-102"],
-.widget#MTR-102{
-  background:#fff;
-  border:1px solid var(--border, #e5e7eb);
-  border-radius:16px;
-  overflow:hidden;
-}
-#MTR-102{ padding:12px 12px 20px; }
-#MTR-102 header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
-#MTR-102 header h4{ margin:0; font-size:16px; font-weight:800 }
-#MTR-102 header .row-actions{ display:flex; gap:8px }
-#MTR-102 header .row-actions .btn,
-#MTR-102 header .row-actions .iconbtn{ height:30px; padding:0 12px; border-radius:10px; border:1px solid var(--border, #e5e7eb); background:#fff; font-size:12px }
-#MTR-102 header .row-actions .btn.primary{ background:#0ea5e9; color:#fff; border-color:#0891b2 }
-
-#MTR-102 .toolbar{ display:flex; flex-wrap:wrap; gap:8px; padding:10px; border:1px solid var(--border, #e5e7eb); border-radius:14px; background:#fff }
-#MTR-102 .toolbar .q, #MTR-102 .toolbar .in{ height:32px; border:1px solid var(--border, #e5e7eb); border-radius:10px; background:#fff; padding:0 10px; font-size:12px }
-
-#MTR-102 .kpi-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px }
-#MTR-102 .kpi{ border:1px solid var(--border, #e5e7eb); border-radius:14px; background:#fff; padding:12px 14px; display:flex; flex-direction:column; gap:6px }
-#MTR-102 .kpi h6{ font-size:12px; color:#334155; margin:0 }
-#MTR-102 .kpi .big{ font-weight:800; font-size:22px }
-#MTR-102 .kpi .muted{ font-size:12px; color:#6b7280 }
-#MTR-102 .bar{ height:8px; background:#eef2f7; border-radius:999px; overflow:hidden }
-#MTR-102 .bar i{ display:block; height:100%; background:linear-gradient(90deg,#60a5fa,#1d4ed8) }
-
-/* Full-width list like AMI */
-#MTR-102 .list-wrap.panel{ margin-top:10px; border:1px solid var(--border, #e5e7eb); border-radius:14px; overflow:hidden; background:#fff }
-#MTR-102 .table-wrap{ max-height:480px; overflow:auto }
-#MTR-102 table{ width:100%; border-collapse:separate; border-spacing:0 }
-#MTR-102 thead th{ position:sticky; top:0; background:#f8fafc; border-bottom:1px solid var(--border,#e5e7eb); z-index:1; text-align:left; font-size:13px; font-weight:700; padding:10px }
-#MTR-102 tbody td{ border-bottom:1px solid var(--border, #e5e7eb); padding:10px; font-size:13px }
-#MTR-102 tbody tr:hover{ background:#fbfdff }
-#MTR-102 .pill{ display:inline-flex; align-items:center; gap:6px; height:22px; padding:0 8px; border-radius:999px; border:1px solid var(--border,#e5e7eb); font-size:12px }
-#MTR-102 .pill.ok{ background:#ecfdf5; border-color:#d1fae5; color:#065f46 }
-#MTR-102 .pill.bad{ background:#fef2f2; border-color:#fecaca; color:#991b1b }
-#MTR-102 .flag-dot{ display:inline-block; width:8px; height:8px; border-radius:999px; background:#10b981; margin-right:6px; vertical-align:middle }
-#MTR-102 .flag-b{ background:#f59e0b }
-
-/* Logs below list */
-#MTR-102 .event-logs{ margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:10px }
-#MTR-102 .eventlogs-card{ border:1px solid var(--border, #e5e7eb); border-radius:14px; background:#fff; padding:10px }
-#MTR-102 .logbox{ border:1px dashed #e5e7eb; border-radius:12px; max-height:260px; overflow:auto; padding:8px; background:#fff }
-
-@media (max-width:1200px){
-  #MTR-102 .kpi-grid{ grid-template-columns:1fr 1fr }
-  #MTR-102 .event-logs{ grid-template-columns:1fr }
-}
-</style>
-
-<script id="mtr102-ami-clone-v5">
-(function(){
-  if(window.__MTR102_V5__) return; window.__MTR102_V5__=true;
-  function $(s,r){return (r||document).querySelector(s)}
-  function $$(s,r){return Array.from((r||document).querySelectorAll(s))}
-  const z=n=>String(n).padStart(2,'0');
-  const fmt=d=>d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+' '+z(d.getHours())+':'+z(d.getMinutes())+':'+z(d.getSeconds());
-  const esc=t=>String(t).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
-  const mark=(t,kw)=>!kw?esc(t):esc(t).replace(new RegExp('('+kw.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')+')','ig'),'<mark>$1</mark>');
-
-  // Dummy dataset for visual parity
-  const NAMES=['홍길동','김담당','이매니저','박현장','최검침'];
-  const COMPLEX=['푸르지오C','래미안B','자이A','e편한세상D','힐스테이트E'];
-  const UTILS=['전기','수도','가스','열량'];
-  const BATCH=['1차','2차','3차'];
-  const PHOTO=['검증','확인필요','미수신'];
-  function gen(n=60){
-    const a=[];
-    for(let i=0;i<n;i++){
-      const u=UTILS[i%4], p=PHOTO[i%3];
-      const idPrefix = (u==='전기'?'전':(u==='수도'?'수':(u==='가스'?'가':'열')));
-      a.push({
-        id: idPrefix + String(100101+i).padStart(6,'0'),
-        complex: COMPLEX[i%5], dong: (100+i%8)+'동', ho: (100+i%25)+'호',
-        addr: COMPLEX[i%5]+' '+(100+i%8)+'동 '+(100+i%25)+'호',
-        dt: new Date(Date.now()-3600e3*(i+1)),
-        val: 1000+(i*7%250),
-        photo: p, gps: i%3!==0, qual: ['A','A','B','A','A','B','A','A','A','B'][i%10],
-        memo: i%5===0?'계량기함 잠김':(i%7===0?'사진 재촬영 요청':''),
-        util: u, staff:NAMES[i%5], batch:BATCH[i%3],
-        rechk: i%6===0?'요청':(i%10===0?'해제':'없음')
-      });
-    }
-    return a;
-  }
-  const S={raw:gen(60), rows:[], kw:''};
-
-  function toolbar(){
-    function sel(k,opts){ return '<select class="in" data-k="'+k+'">'+opts+'</select>' }
-    const complexes = [...new Set(S.raw.map(r=>r.complex))];
-    const dongs = [...new Set(S.raw.map(r=>r.dong))];
-    const hos = [...new Set(S.raw.map(r=>r.ho))];
-    const staff = [...new Set(S.raw.map(r=>r.staff))];
-    const batch = [...new Set(S.raw.map(r=>r.batch))];
-    return '<div class="toolbar">'
-      + '<input id="mtr102-q" class="q" placeholder="계량기ID/주소/메모 검색…">'
-      + sel('util','<option value="">유틸 전체</option><option>전기</option><option>수도</option><option>가스</option><option>열량</option>')
-      + sel('complex','<option value="">단지 전체</option>'+complexes.map(v=>'<option>'+v+'</option>').join(''))
-      + sel('dong','<option value="">동 전체</option>'+dongs.map(v=>'<option>'+v+'</option>').join(''))
-      + sel('ho','<option value="">호 전체</option>'+hos.map(v=>'<option>'+v+'</option>').join(''))
-      + sel('staff','<option value="">담당자 전체</option>'+staff.map(v=>'<option>'+v+'</option>').join(''))
-      + sel('batch','<option value="">배치 전체</option>'+batch.map(v=>'<option>'+v+'</option>').join(''))
-      + sel('rechk','<option value="">재검침 여부</option><option>요청</option><option>해제</option>')
-      + '<span style="margin-left:auto"></span>'
-      + '<span class="pill-mini">권한: 조회 · 생성 · 수정 · 가져오기 · 내보내기</span>'
-      + '</div>';
-  }
-
-  function kpis(rows){
-    const verOk = rows.filter(r=>r.photo==='검증').length;
-    const pct = rows.length ? Math.round(verOk/rows.length*100) : 0;
-    const recent = rows.slice().sort((a,b)=>b.dt-a.dt)[0]?.dt || new Date();
-    const rechk = rows.filter(r=>r.rechk==='요청').length;
-    // 담당자별 처리현황 (검증률 기준)
-    const staffStats = {};
-    rows.forEach(r=>{
-      const k=r.staff; staffStats[k]=staffStats[k]||{ok:0,total:0};
-      staffStats[k].total++; if(r.photo==='검증') staffStats[k].ok++;
-    });
-    const top = Object.entries(staffStats).map(([k,v])=>({k, p: v.total? Math.round(v.ok/v.total*100):0})).sort((a,b)=>b.p-a.p).slice(0,4);
-    return '<div class="kpi-grid">'
-      + '<div class="kpi"><h6>사진 검증률</h6><div class="big">'+pct+'%</div><div class="bar"><i style="width:'+pct+'%"></i></div><div class="muted">총 '+rows.length+'건 중 검증 '+verOk+'건</div></div>'
-      + '<div class="kpi"><h6>최근 입력시각</h6><div class="big">'+fmt(recent)+'</div><div class="muted">가장 최근 입력</div></div>'
-      + '<div class="kpi"><h6>재검침 요청</h6><div class="big">'+rechk+'건</div><div class="muted">요청 상태</div></div>'
-      + '<div class="kpi"><h6>담당자별 처리현황</h6>'
-        + top.map(s=>'<div style="display:flex;align-items:center;gap:8px"><span style="width:84px" class="muted">'+esc(s.k)+'</span><div class="bar" style="flex:1"><i style="width:'+s.p+'%"></i></div><b style="font-size:12px">'+s.p+'%</b></div>').join('')
-      + '</div>'
-      + '</div>';
-  }
-
-  function table(rows){
-    const th = ['계량기ID','단지/동/호','유틸리티','검침시각','사진상태','입력값','품질플래그'];
-    const head = '<thead><tr>'+th.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead>';
-    const body = '<tbody id="mtr102-tbody">'
-      + rows.map((r,i)=>'<tr data-i="'+i+'">'
-        + '<td>'+mark(r.id,S.kw)+'</td>'
-        + '<td>'+mark(r.addr,S.kw)+'</td>'
-        + '<td>'+r.util+'</td>'
-        + '<td>'+fmt(r.dt)+'</td>'
-        + '<td>'+(r.photo==='검증'?'<span class="pill ok">정상</span>':(r.photo==='확인필요'?'<span class="pill">확인필요</span>':'<span class="pill bad">장애</span>'))+'</td>'
-        + '<td style="text-align:right">'+r.val.toLocaleString()+'</td>'
-        + '<td>'+'<span class="flag-dot '+(r.qual==='B'?'flag-b':'')+'"></span>'+r.qual+'</td>'
-      + '</tr>').join('')
-      + '</tbody>';
-    return '<div class="list-wrap panel">'
-      + '<div class="table-wrap"><table>'+head+body+'</table></div>'
-      + '</div>';
-  }
-
-  function logs(){
-    return '<div class="event-logs">'
-      + '<div class="eventlogs-card"><div class="pill-mini">작업 로그</div><div id="mtr102-log-ops" class="logbox"></div></div>'
-      + '<div class="eventlogs-card"><div class="pill-mini">재검침 로그</div><div id="mtr102-log-rechk" class="logbox"></div></div>'
-      + '</div>';
-  }
-
-  function header(){
-    return '<header><h4>수동검침 입력(사진·GPS·오프라인)</h4><div class="row-actions">'
-      + '<button class="iconbtn" data-act="upload">사진 업로드</button>'
-      + '<button class="iconbtn" data-act="gps">GPS 캡처</button>'
-      + '<button class="btn primary" data-act="save">일괄 저장</button>'
-      + '<button class="iconbtn" data-act="import">CSV 가져오기</button>'
-      + '<button class="iconbtn" data-act="sync">오프라인 동기화</button>'
-      + '</div></header>';
-  }
-
-  function layout(rows){
-    return '<section class="widget" id="MTR-102">'
-      + header()
-      + toolbar()
-      + kpis(rows)
-      + table(rows)
-      + logs()
-      + '</section>';
-  }
-
-  function mount(){
-    const host = document.querySelector('.vpage[data-vpage="MTR-102"], .vpage#MTR-102, [data-page="MTR-102"], [data-key="MTR-102"]');
-    if(!host) return;
-    const rows = (S.rows && S.rows.length)? S.rows : (S.rows = S.raw.slice());
-    host.innerHTML = layout(rows);
-  }
-
-  function addLog(which, msg){
-    const box = $('#'+which); if(!box) return;
-    const div = document.createElement('div');
-    div.className = 'item';
-    div.innerHTML = '<span>'+fmt(new Date())+'</span> · <span>'+esc(msg)+'</span>';
-    box.prepend(div);
-  }
-
-  // Filters
-  function apply(){
-    const host = $('#MTR-102'); if(!host) return;
-    const get = k => (host.querySelector('.toolbar [data-k="'+k+'"]')||{}).value || '';
-    const kwEl = host.querySelector('#mtr102-q'); S.kw = (kwEl?.value||'').trim();
-    S.rows = S.raw.filter(r=>{
-      if(S.kw){
-        const plain = (r.id+' '+r.addr+' '+(r.memo||'')).toLowerCase();
-        if(!plain.includes(S.kw.toLowerCase())) return false;
-      }
-      const ok = ['util','staff','batch'].every(k=>{ const v=get(k); return !v || r[k]===v; });
-      if(!ok) return false;
-      const c=get('complex'); if(c && r.complex!==c) return false;
-      const d=get('dong'); if(d && r.dong!==d) return false;
-      const h=get('ho'); if(h && r.ho!==h) return false;
-      const re=get('rechk'); if(re && r.rechk!==re) return false;
-      return true;
-    });
-    mount();
-  }
-
-  // Delegated bindings
-  document.addEventListener('input', e=>{ if(e.target.closest('#MTR-102 .toolbar')) apply(); }, true);
-  document.addEventListener('change', e=>{ if(e.target.closest('#MTR-102 .toolbar')) apply(); }, true);
-
-  document.addEventListener('click', e=>{
-    const host = e.target.closest('#MTR-102'); if(!host) return;
-
-    // Header actions
-    const actBtn = e.target.closest('[data-act]');
-    if(actBtn){
-      const act = actBtn.getAttribute('data-act');
-      const MAP = {
-        upload:['사진 업로드','선택 항목의 사진을 업로드하시겠습니까?','사진 업로드 완료'],
-        gps:['GPS 캡처','현재 위치 기반으로 GPS를 캡처합니다.','GPS 캡처 완료'],
-        save:['일괄 저장','표의 변경사항을 일괄 저장합니다.','일괄 저장 완료'],
-        import:['CSV 가져오기','CSV 파일에서 데이터를 가져옵니다.','CSV 가져오기 완료'],
-        sync:['오프라인 동기화','오프라인 데이터와 동기화합니다.','오프라인 동기화 완료']
-      };
-      const [title, body, done] = MAP[act] || ['확인','진행하시겠습니까?','완료'];
-      const ov = document.createElement('div'); ov.className='overlay';
-      ov.innerHTML = '<div class="modal"><header><b>'+title+'</b><button class="iconbtn close">닫기</button></header><div class="body">'+body+'</div><div class="foot"><button class="btn cancel">취소</button><button class="btn primary ok">확인</button></div></div>';
-      document.body.appendChild(ov);
-      ov.querySelector('.close, .cancel').addEventListener('click', ()=>ov.remove());
-      ov.querySelector('.ok').addEventListener('click', ()=>{
-        ov.remove();
-        addLog('mtr102-log-ops', title+' 실행');
-        const t=document.createElement('div'); t.className='toast'; t.textContent=done; document.body.appendChild(t); setTimeout(()=>t.remove(),1400);
-      });
-      return;
-    }
-
-    // Row detail actions (재검침/검증/GPS 토글)
-    const tr = e.target.closest('#mtr102-tbody tr');
-    if(tr){
-      const i = Number(tr.getAttribute('data-i'));
-      const r = S.rows[i];
-      const ov = document.createElement('div'); ov.className='overlay';
-      ov.innerHTML = '<div class="modal"><header><b>세부 데이터</b><button class="iconbtn close">닫기</button></header><div class="body"><table class="mini">'
-        + '<tr><td>계량기ID</td><td>'+esc(r.id)+'</td></tr>'
-        + '<tr><td>단지/동/호</td><td>'+esc(r.addr)+'</td></tr>'
-        + '<tr><td>유틸리티</td><td>'+esc(r.util)+'</td></tr>'
-        + '<tr><td>담당자</td><td>'+esc(r.staff)+'</td></tr>'
-        + '<tr><td>배치</td><td>'+esc(r.batch)+'</td></tr>'
-        + '<tr><td>검침시각</td><td>'+fmt(r.dt)+'</td></tr>'
-        + '<tr><td>입력값</td><td>'+esc(r.val)+'</td></tr>'
-        + '<tr><td>사진상태</td><td>'+esc(r.photo)+'</td></tr>'
-        + '<tr><td>GPS</td><td>'+(r.gps?'정상':'없음')+'</td></tr>'
-        + '<tr><td>품질</td><td>'+esc(r.qual)+'</td></tr>'
-        + '<tr><td>메모</td><td>'+(esc(r.memo||'-'))+'</td></tr>'
-        + '</table>'
-        + '<div class="row-actions" style="margin-top:8px">'
-        +   '<button class="btn" data-rowact="rechk-req">재검침 요청</button>'
-        +   '<button class="btn" data-rowact="rechk-done">재검침 완료</button>'
-        +   '<button class="btn" data-rowact="photo-ok">사진 검증</button>'
-        +   '<button class="btn" data-rowact="gps-toggle">GPS 토글</button>'
-        + '</div>'
-        + '</div><div class="foot"><button class="btn close">닫기</button></div></div>';
-      document.body.appendChild(ov);
-      const close = ()=>ov.remove();
-      ov.querySelectorAll('.close').forEach(x=>x.addEventListener('click', close));
-      ov.addEventListener('click', ev=>{
-        const a = ev.target.closest('[data-rowact]'); if(!a) return;
-        const act = a.getAttribute('data-rowact');
-        if(act==='rechk-req'){ r.rechk='요청'; addLog('mtr102-log-rechk', r.id+' 재검침 요청'); }
-        if(act==='rechk-done'){ r.rechk='해제'; addLog('mtr102-log-rechk', r.id+' 재검침 완료'); }
-        if(act==='photo-ok'){ r.photo='검증'; addLog('mtr102-log-ops', r.id+' 사진 검증 처리'); }
-        if(act==='gps-toggle'){ r.gps=!r.gps; addLog('mtr102-log-ops', r.id+' GPS '+(r.gps?'활성화':'비활성화')); }
-        apply(); // refresh view
-      });
-    }
-  }, true);
-
-  // Left menu glue (non-invasive)
-  function ensureNav(){
-    const side = document.querySelector('#ui-pm-work #pm-side'); if(!side) return;
-    const groups = side.querySelectorAll('.mid-group'); if(!groups.length) return;
-    let bucket = null;
-    groups.forEach(g=>{
-      const t = g.previousElementSibling && g.previousElementSibling.querySelector('span');
-      if(t && (t.textContent||'').includes('검침관리')) bucket = g;
-    });
-    if(!bucket) bucket = groups[0];
-    if(bucket.querySelector('.mid[data-mid="MTR-102"]')) return;
-    const btn = document.createElement('button'); btn.className='mid'; btn.setAttribute('data-mid','MTR-102'); btn.textContent='수동검침 입력(사진·GPS·오프라인)';
-    const after = bucket.querySelector('.mid[data-mid="MTR-101"]');
-    if(after && after.nextSibling) bucket.insertBefore(btn, after.nextSibling); else bucket.appendChild(btn);
-  }
-  function routeWire(){
-    document.addEventListener('click', function(e){
-      const m = e.target.closest && e.target.closest('.mid[data-mid="MTR-102"]'); if(!m) return;
-      e.preventDefault();
-      try{ if(typeof ensureSubPage==='function') ensureSubPage('MTR-102','수동검침 입력(사진·GPS·오프라인)');
-           if(typeof activateVPage==='function') activateVPage('MTR-102'); }catch(err){}
-      setTimeout(mount,0);
-    }, true);
-  }
-
-  function boot(){
-    ensureNav(); routeWire();
-    document.addEventListener('DOMContentLoaded', ()=> setTimeout(mount,0));
-    window.addEventListener('hashchange', ()=> setTimeout(mount,0));
-    try{ new MutationObserver(()=> setTimeout(mount,0)).observe(document.body,{childList:true,subtree:true}); }catch(e){}
-  }
-  boot();
-})();
-</script>
-
-<!-- === MTR-102 AMI-style Redesign v7 : BEGIN === -->
-<style id="mtr102-ami-skin-v7">
-  .vpage[data-vpage="MTR-102"],
-  .vpage#MTR-102,
-  [data-page="MTR-102"],
-  [data-key="MTR-102"],
-  .widget#MTR-102{
-    background:#fff; border:1px solid var(--border,#e5e7eb); border-radius:16px; overflow:hidden;
-  }
-  #MTR-102{ padding:12px 12px 20px; }
-  #MTR-102 header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
-  #MTR-102 header h4{ margin:0; font-size:16px; letter-spacing:-.2px }
-  #MTR-102 header .row-actions{ display:flex; gap:8px; align-items:center }
-  #MTR-102 .row-actions .iconbtn, #MTR-102 .row-actions .btn{ height:28px; padding:0 10px; border-radius:10px; border:1px solid var(--border); background:#fff; cursor:pointer }
-  #MTR-102 .row-actions .btn.primary{ background:linear-gradient(180deg,#fff,#f7fafc) }
-
-  #MTR-102 .toolbar{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px 12px; border:1px solid var(--border); border-radius:12px; background:linear-gradient(180deg,#fff,#fafcff) }
-  #MTR-102 .toolbar .in{ height:30px; padding:0 8px; border-radius:8px; border:1px solid var(--border); background:#fff; font-size:12px }
-  #MTR-102 .toolbar .select{ min-width:140px }
-  #MTR-102 .toolbar .q{ flex:1 1 260px; min-width:200px }
-  #MTR-102 .pill-mini{ display:inline-flex; align-items:center; gap:6px; height:20px; padding:0 8px; border-radius:999px; border:1px solid var(--border); font-size:11px; background:#fff }
-  #MTR-102 .perm-pill{ margin-left:8px }
-
-  #MTR-102 .kpi-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; padding:10px 0 }
-  #MTR-102 .kpi{ cursor:pointer; border:1px solid var(--border); border-radius:12px; padding:10px; background:var(--bg-50,#f8fafc) }
-  #MTR-102 .kpi h6{ margin:0 0 4px; font-size:12px; color:var(--ink-600,#475569) }
-  #MTR-102 .kpi b{ font-variant-numeric:tabular-nums; font-size:18px }
-
-  #MTR-102 .panel{ border:1px solid var(--border); border-radius:14px; background:#fff; overflow:hidden }
-  #MTR-102 .table-wrap{ overflow:auto }
-  #MTR-102 table{ width:100%; border-collapse:separate; border-spacing:0 } 
-  #MTR-102 thead th{ position:sticky; top:0; background:#f8fafc; border-bottom:1px solid var(--border); font-size:13px; font-weight:700; padding:10px; z-index:1; text-align:left }
-  #MTR-102 tbody td{ border-bottom:1px solid var(--border); padding:10px; font-size:13px; vertical-align:middle }
-  #MTR-102 tbody tr:hover{ background:#fbfdff }
-  #MTR-102 tbody tr.sel{ outline:2px solid rgba(59,130,246,.35); background:linear-gradient(180deg,#fff,#f5fbff) }
-  #MTR-102 .status{ display:inline-flex; align-items:center; height:20px; padding:0 8px; border-radius:999px; border:1px solid var(--border); font-size:11px }
-  #MTR-102 .status.ok{ background:#ecfdf5; border-color:#d1fae5; color:#065f46 }
-  #MTR-102 .status.warn{ background:#fff7ed; border-color:#ffedd5; color:#9a3412 }
-  #MTR-102 .status.bad{ background:#fef2f2; border-color:#fecaca; color:#991b1b }
-  #MTR-102 .flash{ animation:mtr102-flash .6s ease } @keyframes mtr102-flash{ from{ box-shadow:inset 0 0 0 9999px rgba(34,197,94,.08) } to{ box-shadow:inset 0 0 0 0 rgba(0,0,0,0) } }
-
-  #MTR-102 .event-logs{ margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:10px }
-  #MTR-102 .eventlogs-card{ border:1px solid var(--border); border-radius:14px; background:#fff; padding:10px }
-  #MTR-102 .logbox{ border:1px dashed var(--border); border-radius:12px; max-height:240px; overflow:auto; padding:8px; background:#fff }
-  #MTR-102 .logbox .item{ display:flex; gap:8px; align-items:center; font-size:12px; padding:4px 0 }
-  #MTR-102 .logbox .k{ padding:0 8px; height:20px; border-radius:999px; border:1px solid var(--border); display:inline-flex; align-items:center; font-size:11px }
-  #MTR-102 .logbox .k.ok{ background:#ecfdf5; color:#065f46; border-color:#d1fae5 }
-  #MTR-102 .logbox .k.rechk{ background:#eff6ff; color:#1e40af; border-color:#dbeafe }
-
-  @media (max-width:1200px){ #MTR-102 .kpi-grid{ grid-template-columns:1fr 1fr } #MTR-102 .event-logs{ grid-template-columns:1fr } }
-</style>
-
-<script id="mtr102-ami-v7">
-(function(){
-  if(window.__MTR102_V7__) return; window.__MTR102_V7__=true;
-  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-  const z=n=>String(n).padStart(2,'0');
-  const fmt=d=>{ try{ if(!(d instanceof Date)) d=new Date(d); return d.getFullYear()+"-"+z(d.getMonth()+1)+"-"+z(d.getDate())+" "+z(d.getHours())+":"+z(d.getMinutes())+":"+z(d.getSeconds()); }catch(e){ return String(d) } };
-  const esc=t=>String(t).replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]));
-  const mark=(t,kw)=>!kw?esc(t):esc(t).replace(new RegExp('('+(kw||'').replace(/[.*+?^${}()|[\]\\]\]/g,'\$&')+')','ig'),'<mark>$1</mark>');
-
-  const COMPLEX=['푸르지오A','래미안B','자이C','힐스D','아이파크E'];
-  const NAMES=['김담당','이주무','박기사','최관리','정운영'];
-  const BATCH=['#1차','#2차','#3차'];
-  const UTILS=['전기','수도','가스','열량'];
-  function genRows(n=80){
-    const arr=[]; const t0=Date.now();
-    for(let i=0;i<n;i++){
-      const cx=COMPLEX[i%COMPLEX.length];
-      const dong=(101 + (i%8)); const ho=(100 + (i%22));
-      const util=UTILS[i%UTILS.length];
-      const dt=new Date(t0 - (i+1)*3600e3);
-      const val= 1000 + ((i*7)%250);
-      const photo = (i%10===0)?'미수신' : (i%6===0?'확인필요':'검증');
-      const gps = (i%3!==0);
-      const qual = ['A','A','B','A','A','B','A','A','A','B'][i%10];
-      const memo = (i%9===0)?'계량기함 잠김':((i%11===0)?'사진 재촬영 요청':'');
-      arr.push({ id:'M-'+(100000+i), complex:cx, dong, ho, util, dt, val, photo, gps, qual, memo, staff:NAMES[i%NAMES.length], batch:BATCH[i%BATCH.length] });
-    }
-    return arr;
-  }
-  const M102={ data:genRows(), filtered:[], selected:new Set(), q:'', mounted:false };
-
-  function openModal(title, body){
-    const wrap=document.createElement('div');
-    wrap.style.cssText='position:fixed;inset:0;display:grid;place-items:center;background:rgba(16,24,40,.35);z-index:9999';
-    wrap.innerHTML='<div style="width:min(560px,92vw);background:#fff;border-radius:14px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.14)">'+
-      '<div style="padding:12px 14px;border-bottom:1px solid var(--border);font-weight:800">'+esc(title)+'</div>'+
-      '<div style="padding:14px;max-height:60vh;overflow:auto">'+body+'</div>'+
-      '<div style="display:flex;justify-content:flex-end;gap:8px;padding:10px 14px;border-top:1px solid var(--border)">'+
-        '<button id="m102-close" class="iconbtn">닫기</button></div></div>';
-    document.body.appendChild(wrap);
-    wrap.addEventListener('click',e=>{ if(e.target.id==='m102-close' || e.target===wrap) wrap.remove(); });
-  }
-
-  function toolbarHTML(){
-    const complexes=[...new Set(M102.data.map(r=>r.complex))];
-    const dongs=[...new Set(M102.data.map(r=>r.dong))];
-    const hos=[...new Set(M102.data.map(r=>r.ho))];
-    const staffs=[...new Set(M102.data.map(r=>r.staff))];
-    const batch=[...new Set(M102.data.map(r=>r.batch))];
-    const sel=(id,opts)=>'<select class="in select" id="'+id+'">'+opts+'</select>';
-    return '<div class="toolbar">'+
-      '<input id="m102-q" class="in q" placeholder="계량기ID/주소/메모 검색…">'+
-      sel('m102-util','<option value="">유틸 전체</option>'+UTILS.map(v=>'<option>'+v+'</option>').join(''))+
-      sel('m102-complex','<option value="">단지 전체</option>'+complexes.map(v=>'<option>'+v+'</option>').join(''))+
-      sel('m102-dong','<option value="">동 전체</option>'+dongs.map(v=>'<option>'+v+'</option>').join(''))+
-      sel('m102-ho','<option value="">호 전체</option>'+hos.map(v=>'<option>'+v+'</option>').join(''))+
-      sel('m102-staff','<option value="">담당자 전체</option>'+staffs.map(v=>'<option>'+v+'</option>').join(''))+
-      sel('m102-batch','<option value="">배치 전체</option>'+batch.map(v=>'<option>'+v+'</option>').join(''))+
-      sel('m102-rechk','<option value="">재검침 여부</option><option>요청</option><option>해제</option>')+
-      '<span style="margin-left:auto"></span>'+
-      '<span class="pill-mini">권한: <b style="margin-left:6px"><span class="pill-mini ok">조회</span> <span class="pill-mini ok">생성</span> <span class="pill-mini ok">수정</span> <span class="pill-mini ok">가져오기</span> <span class="pill-mini ok">내보내기</span></b></span>'+
-    '</div>';
-  }
-  function kpiHTML(rows){
-    const ver=rows.filter(r=>r.photo==='검증').length, tot=rows.length||1; 
-    const pct=Math.round(ver/tot*100);
-    const off=rows.filter(r=>r.photo==='미수신').length;
-    const req=rows.filter(r=>r.photo==='확인필요').length;
-    const gps=rows.filter(r=>r.gps).length;
-    return '<div class="kpi-grid" id="m102-kpis">'+
-      '<div class="kpi" data-k="offline"><h6>오프라인 대기건</h6><b>'+off.toLocaleString()+'건</b></div>'+
-      '<div class="kpi" data-k="rechk"><h6>재검침 요청건</h6><b>'+req.toLocaleString()+'건</b></div>'+
-      '<div class="kpi" data-k="photo"><h6>사진 검증상태</h6><b>'+pct+'%</b></div>'+
-      '<div class="kpi" data-k="gps"><h6>GPS 상태</h6><b>'+(gps? '정상':'없음')+'</b></div>'+
-    '</div>';
-  }
-  function tableHTML(rows){
-    const head=['계량기ID','단지/동/호','검침시각','입력값','사진','GPS','품질','메모','처리'];
-    const thead='<thead><tr>'+head.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead>';
-    const body='<tbody id="m102-tb">'+rows.map((r,i)=>{
-      const photo = r.photo==='검증'?'<span class="status ok">검증</span>':(r.photo==='확인필요'?'<span class="status warn">확인필요</span>':'<span class="status bad">미수신</span>');
-      const gps = r.gps?'<span class="status ok">GPS</span>':'<span class="status">없음</span>';
-      return '<tr data-i="'+i+'">'+
-        '<td>'+mark(r.id,M102.q)+'</td>'+
-        '<td>'+mark(r.complex+" "+r.dong+" "+r.ho,M102.q)+'</td>'+
-        '<td>'+fmt(r.dt)+'</td>'+
-        '<td style="text-align:right">'+r.val.toLocaleString()+'</td>'+
-        '<td>'+photo+'</td>'+
-        '<td>'+gps+'</td>'+
-        '<td>'+r.qual+'</td>'+
-        '<td>'+(r.memo||'')+'</td>'+
-        '<td style="white-space:nowrap">'+
-          '<button class="iconbtn" data-rowact="rechk-'+(r.photo==='확인필요'?'done':'req')+'">'+(r.photo==='확인필요'?'재검침 해제':'재검침 요청')+'</button>'+
-          '<button class="iconbtn" data-rowact="photo-ok">사진 검증</button>'+
-          '<button class="iconbtn" data-rowact="gps-toggle">GPS 토글</button>'+
-        '</td>'+
-      '</tr>';
-    }).join('')+'</tbody>';
-    return '<div class="list-wrap panel"><div class="table-wrap"><table>'+thead+body+'</table></div></div>';
-  }
-  function logsHTML(){
-    return '<div class="event-logs">'+
-      '<div class="eventlogs-card"><div class="pill-mini">작업 로그</div><div id="m102-log-ops" class="logbox"></div></div>'+
-      '<div class="eventlogs-card"><div class="pill-mini">재검침 로그</div><div id="m102-log-rechk" class="logbox"></div></div>'+
-    '</div>';
-  }
-
-  function render(host){
-    const rows = (M102.filtered.length?M102.filtered:M102.data);
-    host.innerHTML = '<section class="widget" id="MTR-102">'+
-      '<header><h4>수동검침 입력(사진·GPS·오프라인)</h4>'+
-        '<div class="row-actions">'+
-          '<button class="iconbtn" id="m102-upload">사진 업로드</button>'+
-          '<button class="iconbtn" id="m102-gps">GPS 캡처</button>'+
-          '<button class="btn primary" id="m102-save">일괄 저장</button>'+
-          '<button class="iconbtn" id="m102-csv">CSV 가져오기</button>'+
-          '<button class="iconbtn" id="m102-sync">오프라인 동기화</button>'+
-        '</div></header>'
-        + toolbarHTML()
-        + kpiHTML(rows)
-        + tableHTML(rows)
-        + logsHTML()
-      + '</section>';
-    bind(host.querySelector('#MTR-102'));
-  }
-
-  function stateFromUI(root){
-    return {
-      q: root.querySelector('#m102-q')?.value.trim().toLowerCase()||'',
-      util: root.querySelector('#m102-util')?.value||'',
-      complex: root.querySelector('#m102-complex')?.value||'',
-      dong: root.querySelector('#m102-dong')?.value||'',
-      ho: root.querySelector('#m102-ho')?.value||'',
-      staff: root.querySelector('#m102-staff')?.value||'',
-      batch: root.querySelector('#m102-batch')?.value||'',
-      rechk: root.querySelector('#m102-rechk')?.value||''
-    };
-  }
-
-  function applyFilter(root){
-    const st = stateFromUI(root); M102.q=st.q;
-    M102.filtered = M102.data.filter(r=>{
-      const kw = (r.id+" "+r.complex+" "+r.dong+" "+r.ho+" "+(r.memo||'')).toLowerCase();
-      if(st.q && !kw.includes(st.q)) return false;
-      if(st.util && r.util!==st.util) return false;
-      if(st.complex && r.complex!==st.complex) return false;
-      if(st.dong && String(r.dong)!==String(st.dong)) return false;
-      if(st.ho && String(r.ho)!==String(st.ho)) return false;
-      if(st.staff && r.staff!==st.staff) return false;
-      if(st.batch && r.batch!==st.batch) return false;
-      if(st.rechk){ const isReq=(r.photo==='확인필요'); if(st.rechk==='요청' && !isReq) return false; if(st.rechk==='해제' && isReq) return false; }
-      return true;
-    });
-    const rows = (M102.filtered.length?M102.filtered:M102.data);
-    const kHost = root.querySelector('#m102-kpis'); if(kHost) kHost.outerHTML = kpiHTML(rows);
-    const tb = root.querySelector('#m102-tb'); if(tb){ tb.parentElement.parentElement.classList.add('flash'); setTimeout(()=>tb.parentElement.parentElement.classList.remove('flash'), 500); tb.outerHTML = tableHTML(rows).match(/<tbody[\s\S]*<\/tbody>/)[0]; }
-    bindRow(root); bindKpi(root);
-    addLog('ops','ok','필터 적용: '+rows.length+'건');
-  }
-
-  function addLog(kind, tag, msg){
-    const box = document.getElementById(kind==='rechk'?'m102-log-rechk':'m102-log-ops');
-    const d = document.createElement('div'); d.className='item';
-    const t = new Date(); const ts = t.getFullYear()+"-"+z(t.getMonth()+1)+"-"+z(t.getDate())+" "+z(t.getHours())+":"+z(t.getMinutes())+":"+z(t.getSeconds());
-    d.innerHTML='<span class="k '+tag+'">'+tag+'</span><span class="t">'+ts+'</span><span>'+esc(msg)+'</span>';
-    if(box){ box.appendChild(d); box.scrollTop = box.scrollHeight; }
-  }
-
-  function bindRow(root){
-    root.querySelectorAll('#m102-tb tr').forEach(tr=>{
-      tr.addEventListener('click',()=>{ root.querySelectorAll('#m102-tb tr').forEach(r=>r.classList.remove('sel')); tr.classList.add('sel'); });
-      tr.addEventListener('dblclick',()=>{
-        const i=+tr.getAttribute('data-i'); const rows=(M102.filtered.length?M102.filtered:M102.data); const r=rows[i];
-        openModal('세부 데이터','<table style="width:100%">'+
-          '<tr><td>계량기ID</td><td>'+esc(r.id)+'</td></tr>'+
-          '<tr><td>주소</td><td>'+esc(r.complex+' '+r.dong+' '+r.ho)+'</td></tr>'+
-          '<tr><td>유틸리티</td><td>'+esc(r.util)+'</td></tr>'+
-          '<tr><td>담당자</td><td>'+esc(r.staff)+'</td></tr>'+
-          '<tr><td>배치</td><td>'+esc(r.batch)+'</td></tr>'+
-          '<tr><td>검침시각</td><td>'+fmt(r.dt)+'</td></tr>'+
-          '<tr><td>입력값</td><td>'+esc(r.val.toLocaleString())+'</td></tr>'+
-          '<tr><td>사진</td><td>'+esc(r.photo)+'</td></tr>'+
-          '<tr><td>GPS</td><td>'+(r.gps?'정상':'없음')+'</td></tr>'+
-          '<tr><td>품질</td><td>'+esc(r.qual)+'</td></tr>'+
-        '</table>');
-        addLog('ops','ok', r.id+' 상세 조회');
-      });
-    });
-    root.addEventListener('click', ev=>{
-      const btn=ev.target.closest('[data-rowact]'); if(!btn) return;
-      ev.preventDefault(); const tr=btn.closest('tr'); if(!tr) return; const i=+tr.getAttribute('data-i'); const src=(M102.filtered.length?M102.filtered:M102.data); const r=src[i];
-      const act = btn.getAttribute('data-rowact');
-      if(act==='rechk-req'){ r.photo='확인필요'; addLog('rechk','rechk', r.id+' 재검침 요청'); }
-      if(act==='rechk-done'){ r.photo='검증'; addLog('rechk','ok', r.id+' 재검침 해제'); }
-      if(act==='photo-ok'){ r.photo='검증'; addLog('ops','ok', r.id+' 사진 검증 처리'); }
-      if(act==='gps-toggle'){ r.gps=!r.gps; addLog('ops','ok', r.id+' GPS '+(r.gps?'활성화':'비활성화')); }
-      applyFilter(root);
-    }, {capture:true});
-  }
-
-  function bindKpi(root){
-    root.querySelectorAll('.kpi').forEach(card=>{
-      card.addEventListener('click',()=>{
-        const k=card.getAttribute('data-k'); const rows=(M102.filtered.length?M102.filtered:M102.data);
-        if(k==='offline'){
-          const list = rows.filter(r=>r.photo==='미수신').slice(0,20).map(r=>'<li>'+esc(r.id)+' · '+esc(r.complex+' '+r.dong+' '+r.ho)+'</li>').join('');
-          openModal('오프라인 대기건','<ol>'+ (list||'<p>없음</p>') +'</ol>'); addLog('ops','ok','오프라인 대기건 조회');
-        }else if(k==='rechk'){
-          const list = rows.filter(r=>r.photo==='확인필요').slice(0,20).map(r=>'<li>'+esc(r.id)+' · '+esc(r.complex+' '+r.dong+' '+r.ho)+'</li>').join('');
-          openModal('재검침 요청건','<ol>'+ (list||'<p>없음</p>') +'</ol>'); addLog('rechk','rechk','재검침 요청건 조회');
-        }else if(k==='photo'){
-          const ok = rows.filter(r=>r.photo==='검증').length; openModal('사진 검증상태','<p>정상 '+ok+'건 / 총 '+rows.length+'건</p>');
-        }else if(k==='gps'){
-          const ok = rows.filter(r=>r.gps).length; openModal('GPS 상태','<p>정상 '+ok+'건 / 총 '+rows.length+'건</p>');
-        }
-      });
-    });
-  }
-
-  function bind(root){
-    const act=(id,fn)=>{ const el=root.querySelector(id); if(el){ el.addEventListener('click',e=>{ e.preventDefault(); fn&&fn(); }); } };
-    act('#m102-upload', ()=>{ openModal('사진 업로드','<p>샘플: 드래그&드롭 또는 파일 선택 UI 모형</p>'); addLog('ops','ok','사진 업로드'); });
-    act('#m102-gps',   ()=>{ openModal('GPS 캡처','<p>샘플: 지도/좌표 캡처 UI 모형</p>'); addLog('ops','ok','GPS 캡처'); });
-    act('#m102-save',  ()=>{ openModal('일괄 저장 확인','<p>필터 결과 대상 '+(M102.filtered.length?M102.filtered.length:M102.data.length)+'건 저장</p>'); addLog('ops','ok','일괄 저장'); });
-    act('#m102-csv',   ()=>{ openModal('CSV 가져오기','<p>샘플: CSV 업로드 모형</p>'); addLog('ops','ok','CSV 가져오기'); });
-    act('#m102-sync',  ()=>{ openModal('오프라인 동기화','<p>샘플: 캐시/동기화 진행 모형</p>'); addLog('ops','ok','오프라인 동기화'); });
-
-    const onChange=()=>applyFilter(root);
-    const onInput=()=>applyFilter(root);
-    root.querySelector('#m102-q')?.addEventListener('input', onInput);
-    ['m102-util','m102-complex','m102-dong','m102-ho','m102-staff','m102-batch','m102-rechk'].forEach(id=> root.querySelector('#'+id)?.addEventListener('change', onChange));
-
-    bindKpi(root); bindRow(root);
-  }
-
-  function findHost(){
-    const sels=['.vpage[data-vpage="MTR-102"]','.vpage#MTR-102','[data-page="MTR-102"]','[data-key="MTR-102"]'];
-    for(const s of sels){ const el=$(s); if(el) return el; } return null;
-  }
-  function teardown(){ const host=findHost(); if(!host) return; const sec=host.querySelector('#MTR-102'); if(sec) sec.remove(); M102.mounted=false; }
-  function mount(){ const host=findHost(); if(!host||M102.mounted) return; M102.mounted=true; render(host); }
-
-  document.addEventListener('click',e=>{ const m=e.target.closest&&e.target.closest('.mid[data-mid="MTR-102"]'); if(m) setTimeout(mount,0); }, true);
-  window.addEventListener('hashchange', ()=> setTimeout(mount,0));
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', ()=> setTimeout(mount,0)); else setTimeout(mount,0);
-  new MutationObserver(()=>{ const host=findHost(); if(host && !host.querySelector('#MTR-102')) setTimeout(mount,0); if(!host && M102.mounted) teardown(); }).observe(document.body,{childList:true,subtree:true});
-})();
-</script>
-<!-- === MTR-102 AMI-style Redesign v7 : END === -->
-
-
-
-
-
 <!-- === MTR-102 Overhaul v19 (KPI & Row popups + actionable header buttons) : BEGIN === -->
-<style id="mtr102-global-guard">
-  #MTR-102 { display: none !important; }
-</style>
-<script id="mtr102-overhaul-v19">
-(function(){
-  if (window.__MTR102_V19__) return; window.__MTR102_V19__ = true;
-
-  const z=n=>(''+n).padStart(2,'0');
-  const fmt=d=>{try{ if(!(d instanceof Date)) d=new Date(d); return `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())} ${z(d.getHours())}:${z(d.getMinutes())}:${z(d.getSeconds())}` }catch(e){ return String(d) }};
-  const esc=t=>String(t).replace(/[&<>]/g,m=>({ "&":"&amp;","<":"&lt;",">":"&gt;" }[m]));
-
-  // Dummy data
-  const COMPLEX=['래미안A','푸르지오B','자이C','힐스D','아이파크E'];
-  const UTILS=['전기','수도','가스','열량'];
-  const DONG=[101,102,103,104,105,106];
-  const HO=[101,102,201,202,301,302,401,402];
-  const STAFFS=['김담당','이주무','박기사','최관리','정운영'];
-  const BATCH=['1차','2차','3차'];
-  const TEAM_BY_STAFF={'김담당':'한강팀','이주무':'북부팀','박기사':'서부팀','최관리':'동부팀','정운영':'북부팀'};
-
-  function gen(n=80){
-    const now=Date.now(); const out=[];
-    for(let i=0;i<n;i++){
-      const util=UTILS[i%4], cx=COMPLEX[i%5], d=DONG[i%DONG.length], h=HO[i%HO.length];
-      const staff=STAFFS[i%5];
-      out.push({ id:(util[0]==='전'?'E':'U')+'-'+(100000+i), complex:cx, dong:d, ho:h, util, dt:new Date(now-(i+1)*3600e3),
-        val:1000+((i*7)%250), photo:(i%10===0?'재촬영':(i%6===0?'보류':'검증')), gps:(i%3!==0), qual:['A','A','B','A','A','B','A','C','A','B'][i%10],
-        memo:(i%13===0?'계량기함 잠김':(i%11===0?'사진 재촬영 요청':'')), staff, team:TEAM_BY_STAFF[staff], batch:BATCH[i%3], rechk:(i%6===0?'요청':(i%10===0?'해제':'')) });
-    }
-    return out;
-  }
-  const ST={ data:gen(), filtered:[], q:'' };
-
-  const CSS = `
-    :host{ all:initial; font-family: system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Segoe UI', Roboto, sans-serif; color:#0f172a; }
-    .wrap{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:12px 12px 18px; }
-    header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
-    header h4{ margin:0; font-size:16px; letter-spacing:-.2px }
-    .hbtn{ height:30px; padding:0 12px; border-radius:10px; border:1px solid #e6ebf0; background:linear-gradient(180deg,#fff,#f6f9ff); cursor:pointer; font-size:13px; font-weight:700 } /* bigger + bold */
-    .row-actions{ display:flex; gap:8px; align-items:center }
-
-    .filterbox{ margin:6px -12px 8px; padding:8px 12px; background:#fbfdff; border-top:1px solid #e6ebf0; border-bottom:1px solid #e6ebf0 }
-    .trow{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:6px 0 }
-    .in{ height:32px; padding:0 10px; border-radius:10px; border:1px solid #e6ebf0; background:#fff; font-size:12px }
-    .q{ flex:1 1 320px; min-width:220px }
-    select.in{ min-width:130px }
-    .trow .right{ margin-left:auto; display:flex; gap:8px; align-items:center }
-
-    .perm-wrap{ display:inline-flex; align-items:center; gap:6px; padding:2px 8px; border:1px solid #e6ebf0; border-radius:999px; background:#fff }
-    .perm-label{ color:#334155; font-size:12px }
-    .perm-pill{ display:inline-flex; align-items:center; height:24px; padding:0 10px; border-radius:999px; border:1px solid #bbf7d0; background:#ecfdf5; color:#166534; font-size:12px; font-weight:600 }
-
-    .kpi-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; padding:10px 0 }
-    .kpi{ border:1px solid #e6ebf0; border-radius:14px; background:#fff; padding:12px; display:flex; gap:12px; align-items:center; box-shadow:0 1px 2px rgba(16,24,40,.04); cursor:pointer }
-    .kpi h6{ margin:0 0 6px; font-size:12px; color:#4b5563; font-weight:700 }
-    .kpi .big{ font-size:22px; font-weight:800; letter-spacing:-.3px; color:#0f172a }
-    .muted{ color:#6b7280; font-size:12px }
-    .ring{ --p:72; width:56px; height:56px; border-radius:50%; background: conic-gradient(#2f6efb calc(var(--p)*1%), #e8eefc 0); display:grid; place-items:center; }
-    .ring span{ background:#fff; width:42px; height:42px; border-radius:50%; display:grid; place-items:center; font:800 12px/1.2 ui-sans-serif,system-ui }
-    .barlist{ display:grid; gap:6px; width:100% }
-    .barlist .row{ display:grid; grid-template-columns:1fr 40px; gap:8px; align-items:center }
-    .bar{ height:8px; border-radius:999px; background:#eef2ff; overflow:hidden }
-    .bar > b{ display:block; height:100%; background:#3b82f6; width:0% }
-
-    .list-wrap{ border:1px solid #e5e7eb; border-radius:14px; background:#fff; overflow:hidden }
-    .table-wrap{ overflow:auto; max-height:520px }
-    table{ width:100%; border-collapse:separate; border-spacing:0 }
-    thead th{ position:sticky; top:0; background:#f7f9fe; border-bottom:1px solid #e5e7eb; padding:10px; text-align:left; font-weight:700; font-size:13px }
-    tbody td{ border-bottom:1px solid #eef2f7; padding:10px; font-size:13px; vertical-align:middle }
-    tbody tr{ cursor:pointer }
-    tbody tr:hover{ background:#fbfdff }
-    td.val{ text-align:left }
-    .tag{ display:inline-flex; align-items:center; gap:6px; height:20px; padding:0 8px; border-radius:999px; font-size:11px; border:1px solid #e5e7eb; background:#fff }
-    .tag.ok{ background:#ecfdf5; border-color:#bbf7d0; color:#166534 }
-    .tag.warn{ background:#fff7ed; border-color:#ffedd5; color:#9a3412 }
-    .tag.bad{ background:#fef2f2; border-color:#fecaca; color:#991b1b }
-    .qflag{ display:inline-flex; align-items:center; height:20px; padding:0 8px; border-radius:999px; border:1px solid #e5e7eb; font-size:11px; background:#eef2ff }
-
-    .logs{ margin-top:12px; border:1px solid #e5e7eb; border-radius:14px; background:#fff; overflow:hidden }
-    .logs header{ padding:12px 14px; border-bottom:1px solid #e5e7eb; font-weight:700; font-size:13px }
-    .logs .cols{ display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:12px; }
-    .logbox{ background:#fbfdff; border:1px solid #e5e7eb; border-radius:12px; height:220px; overflow:auto; padding:10px; font-size:12px; line-height:1.6 }
-    .logbox .item{ display:flex; gap:10px; align-items:center; padding:4px 0; font-size:12px }
-    .logbox .k{ padding:0 8px; height:20px; border-radius:999px; border:1px solid #e5e7eb; font-size:11px }
-    .logbox .k.ok{ background:#ecfdf5; color:#166534; border-color:#bbf7d0 }
-    .logbox .k.rechk{ background:#eff6ff; color:#1e40af; border-color:#dbeafe }
-
-    /* Modal */
-    .modal-back{ position:fixed; inset:0; background:rgba(15,23,42,.45); display:grid; place-items:center; z-index:999999 }
-    .modal{ width:min(920px, 92vw); max-height:88vh; overflow:auto; background:#fff; border:1px solid #e5e7eb; border-radius:16px; box-shadow:0 20px 60px rgba(2,6,23,.2) }
-    .modal header{ padding:14px 16px; border-bottom:1px solid #e5e7eb; display:flex; align-items:center; justify-content:space-between }
-    .modal header h5{ margin:0; font-size:16px }
-    .modal .inner{ padding:14px 16px; font-size:13px }
-    .modal .actions{ display:flex; justify-content:flex-end; gap:8px; padding:12px 16px; border-top:1px solid #e5e7eb }
-    .btn{ height:32px; padding:0 12px; border-radius:10px; border:1px solid #e6ebf0; background:#fff; cursor:pointer; font-size:12px }
-    .btn.primary{ background:#14532d; color:#fff; border-color:#14532d }
-    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px }
-    .kv{ display:grid; grid-template-columns:140px 1fr; gap:8px; align-items:center }
-    .mini{ font-size:12px; color:#475569 }
-    .mono{ font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace }
-    .prog{ height:10px; border-radius:999px; background:#eef2ff; overflow:hidden }
-    .prog>b{ display:block; height:100%; background:#3b82f6; width:0% }
-  `;
-
-  function toolbarHTML(rows){
-    const complexes=[...new Set(rows.map(r=>r.complex))].sort();
-    const dongs=[...new Set(rows.map(r=>r.dong))].sort();
-    const hos=[...new Set(rows.map(r=>r.ho))].sort();
-    const staffs=[...new Set(rows.map(r=>r.staff))].sort();
-    const batches=[...new Set(rows.map(r=>r.batch))].sort();
-    const sel=(id,items,ph)=>'<select class="in" id="'+id+'"><option value="">'+ph+'</option>'+items.map(v=>'<option>'+v+'</option>').join('')+'</select>';
-
-    return '<div class="filterbox">'+
-      '<div class="trow top">'+
-        '<input class="in q" id="m-q" placeholder="계량기ID/주소/메모 검색…">'+
-        sel('m-complex',complexes,'단지 전체')+
-        sel('m-dong',dongs,'동 전체')+
-        sel('m-ho',hos,'호 전체')+
-        sel('m-util',['전기','수도','가스','열량'],'유틸 전체')+
-      '</div>'+
-      '<div class="trow bottom">'+
-        sel('m-staff',staffs,'담당자 전체')+
-        sel('m-batch',batches,'배치 전체')+
-        sel('m-rechk',['요청','해제'],'재검침 여부')+
-        '<div class="right">'+
-          '<span class="perm-wrap">'+
-            '<span class="perm-label">권한:</span>'+
-            '<span class="perm-pill">조회</span>'+
-            '<span class="perm-pill">생성</span>'+
-            '<span class="perm-pill">수정</span>'+
-            '<span class="perm-pill">가져오기</span>'+
-            '<span class="perm-pill">내보내기</span>'+
-          '</span>'+
-        '</div>'+
-      '</div>'+
-    '</div>';
-  }
-
-  function kpiHTML(rows){
-    const total=rows.length, verified=rows.filter(r=>r.photo==='검증').length;
-    const pct = total? Math.round(verified/total*100):0;
-    const last = rows.reduce((a,r)=> r.dt>a?r.dt:a, new Date(0));
-    const rechk=rows.filter(r=>r.rechk==='요청').length;
-    const teamPct = ['한강팀','북부팀','서부팀','동부팀'].map((t,i)=>{
-      const subset = rows.filter(r=>r.team===t), ok = subset.filter(r=>r.photo==='검증').length;
-      return {name:t,p: subset.length? Math.round(ok/subset.length*100):0};
-    });
-    return '<div class="kpi-grid">'+
-      '<div class="kpi" data-kpi="photo"><div class="ring" style="--p:'+pct+'"><span>'+pct+'%</span></div><div><h6>사진 검증률</h6><div class="big">'+pct+'%</div><div class="muted">총 '+total+'건 중 검증 '+verified+'건</div></div></div>'+
-      '<div class="kpi" data-kpi="last"><div style="flex:1"><h6>최근 입력시각</h6><div class="big">'+fmt(last)+'</div><div class="muted">가장 최근 입력</div></div></div>'+
-      '<div class="kpi" data-kpi="rechk"><div style="flex:1"><h6>재검침 요청</h6><div class="big">'+rechk+'건</div><div class="muted">최근 24시간 기준</div></div></div>'+
-      '<div class="kpi" data-kpi="teams"><div style="width:100%"><h6>담당부서 처리현황</h6><div class="barlist">'+
-        teamPct.map(t=>'<div class="row"><div class="bar"><b style="width:'+t.p+'%"></b></div><div class="muted">'+t.p+'%</div></div>').join('')+
-      '</div></div></div>'+
-    '</div>';
-  }
-
-  function tableHTML(rows){
-    return '<div class="list-wrap"><div class="table-wrap"><table>'+
-      '<thead><tr>'+
-        '<th>계량기ID</th><th>단지/동/호</th><th>유틸리티</th><th>검침시각</th><th>입력값</th><th>사진</th><th>GPS</th><th>품질</th><th>메모 / 작업</th>'+
-      '</tr></thead><tbody>'+
-      rows.map(r=>{
-        const photo = r.photo==='검증'?'<span class="tag ok">검증</span>':(r.photo==='보류'?'<span class="tag warn">보류</span>':'<span class="tag bad">재촬영</span>');
-        const gps = r.gps?'<span class="tag ok">GPS</span>':'<span class="tag">없음</span>';
-        const q = r.qual==='A'?'<span class="qflag">A</span>':(r.qual==='B'?'<span class="qflag">B</span>':'<span class="qflag">C</span>');
-        const acts = '<a href="#" data-act="rechk">재검침</a> <a href="#" data-act="photook">사진확정</a> <a href="#" data-act="gpstoggle">GPS</a>';
-        return '<tr data-id="'+esc(r.id)+'">'+
-          '<td><b>'+esc(r.id)+'</b></td>'+
-          '<td>'+esc(r.complex)+' '+esc(r.dong)+'/'+esc(r.ho)+'</td>'+
-          '<td>'+esc(r.util)+'</td>'+
-          '<td>'+fmt(r.dt)+'</td>'+
-          '<td class="val">'+(r.val.toLocaleString())+'</td>'+
-          '<td>'+photo+'</td>'+
-          '<td>'+gps+'</td>'+
-          '<td>'+q+'</td>'+
-          '<td>'+(esc(r.memo||''))+' <span class="actions">'+acts+'</span></td>'+
-        '</tr>';
-      }).join('')+
-      '</tbody></table></div></div>';
-  }
-
-  function logsHTML(){
-    return '<section class="logs"><header>이벤트/로그</header><div class="cols">'+
-      '<div><div class="perm-wrap" style="margin-bottom:6px"><span class="perm-label">작업 로그</span></div><div id="log-ops" class="logbox"></div></div>'+
-      '<div><div class="perm-wrap" style="margin-bottom:6px"><span class="perm-label">재검침 로그</span></div><div id="log-rechk" class="logbox"></div></div>'+
-    '</div></section>';
-  }
-
-  function addLog(kind, tag, msg, root){
-    const box = (kind==='rechk')? root.getElementById('log-rechk') : root.getElementById('log-ops');
-    const d=new Date(); const ts = `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())} ${z(d.getHours()).toString().padStart(2,'0')}:${z(d.getMinutes()).toString().padStart(2,'0')}:${z(d.getSeconds()).toString().padStart(2,'0')}`;
-    const item=document.createElement('div'); item.className='item';
-    item.innerHTML=`<span class="k ${tag}">${tag}</span><span class="t" style="color:#64748b;font-variant-numeric:tabular-nums">${ts}</span><span>${esc(msg)}</span>`;
-    box.appendChild(item); box.scrollTop=box.scrollHeight;
-  }
-
-  // Modal helpers
-  function showModal(root, title, html, actions){
-    const back = document.createElement('div'); back.className='modal-back';
-    const m = document.createElement('div'); m.className='modal';
-    m.innerHTML = '<header><h5>'+esc(title)+'</h5><button class="btn" id="m-close">닫기</button></header>'+
-                  '<div class="inner">'+html+'</div>'+
-                  '<div class="actions" id="m-actions"></div>';
-    back.appendChild(m);
-    root.appendChild(back);
-    m.querySelector('#m-close').onclick = ()=> back.remove();
-    const actBar = m.querySelector('#m-actions');
-    (actions||[]).forEach(a=>{
-      const b=document.createElement('button'); b.className='btn'+(a.primary?' primary':'');
-      b.textContent=a.text; b.onclick=()=> a.onClick?.(back,m);
-      actBar.appendChild(b);
-    });
-    return {back, modal:m};
-  }
-
-  // Build UI
-  function build(container){
-    const root = container.shadowRoot || container.attachShadow({mode:'open'});
-    const rows = ST.filtered.length? ST.filtered : ST.data;
-    root.innerHTML = `
-      <style>${CSS}</style>
-      <div class="wrap">
-        <header>
-          <h4>수동검침 입력(사진·GPS·오프라인)</h4>
-          <div class="row-actions">
-            <button class="hbtn" id="m-upload">사진 업로드</button>
-            <button class="hbtn" id="m-gps">GPS 캡처</button>
-            <button class="hbtn" id="m-save">일괄 저장</button>
-            <button class="hbtn" id="m-csv">CSV 가져오기</button>
-            <button class="hbtn" id="m-sync">오프라인 동기화</button>
-          </div>
-        </header>
-        ${toolbarHTML(rows)}
-        ${kpiHTML(rows)}
-        ${tableHTML(rows)}
-        ${logsHTML()}
-      </div>`;
-
-    // Filtering
-    const onFilter=()=>{
-      const q = root.getElementById('m-q')?.value.trim().toLowerCase()||'';
-      const util = root.getElementById('m-util')?.value||'';
-      const cx   = root.getElementById('m-complex')?.value||'';
-      const d    = root.getElementById('m-dong')?.value||'';
-      const h    = root.getElementById('m-ho')?.value||'';
-      const stf  = root.getElementById('m-staff')?.value||'';
-      const bat  = root.getElementById('m-batch')?.value||'';
-      const rk   = root.getElementById('m-rechk')?.value||'';
-      ST.filtered = ST.data.filter(r=>{
-        const key=(r.id+' '+r.complex+' '+r.dong+' '+r.ho+' '+(r.memo||'')).toLowerCase();
-        if(q && !key.includes(q)) return false;
-        if(util && r.util!==util) return false;
-        if(cx && r.complex!==cx) return false;
-        if(d && String(r.dong)!==String(d)) return false;
-        if(h && String(r.ho)!==String(h)) return false;
-        if(stf && r.staff!==stf) return false;
-        if(bat && r.batch!==bat) return false;
-        if(rk){ const isReq=(r.rechk==='요청'); if(rk==='요청' && !isReq) return false; if(rk==='해제' && isReq) return false; }
-        return true;
-      });
-      build(container);
-      addLog('ops','ok','필터 적용: '+(ST.filtered.length||ST.data.length)+'건', root);
-    };
-    ['m-q','m-util','m-complex','m-dong','m-ho','m-staff','m-batch','m-rechk'].forEach(id=>{
-      const el=root.getElementById(id); if(!el) return;
-      el.addEventListener(id==='m-q'?'input':'change', onFilter);
-    });
-
-    // Header button actions (mock functional)
-    root.getElementById('m-upload')?.addEventListener('click',()=>{
-      const html = '<div class="mini">여러 장의 사진을 선택하세요 (미리보기는 목업입니다)</div>'+
-                   '<input type="file" multiple accept="image/*" id="filepick" class="in" style="width:100%;margin-top:8px">'+
-                   '<div id="pickstat" class="mini" style="margin-top:8px"></div>';
-      const {back,modal} = showModal(root,'사진 업로드', html,[
-        {text:'업로드', primary:true, onClick:()=>{ addLog('ops','ok','사진 업로드 완료(목업)',root); back.remove(); }},
-      ]);
-      modal.querySelector('#filepick').addEventListener('change', (e)=>{
-        const n=e.target.files?.length||0;
-        modal.querySelector('#pickstat').textContent = n+'개의 파일 선택됨';
-      });
-    });
-    root.getElementById('m-gps')?.addEventListener('click',()=>{
-      const lat=(37.5 + Math.random()*0.6).toFixed(6), lon=(126.8 + Math.random()*0.6).toFixed(6);
-      const html = '<div class="grid2">'+
-        '<div class="kv"><div>위도(lat)</div><div class="mono">'+lat+'</div></div>'+
-        '<div class="kv"><div>경도(lon)</div><div class="mono">'+lon+'</div></div>'+
-        '</div><div class="mini" style="margin-top:8px">현재 좌표를 모든 필터 결과 항목에 적용합니다.</div>';
-      showModal(root,'GPS 캡처', html,[
-        {text:'좌표 적용', primary:true, onClick:()=>{
-          const target = ST.filtered.length? ST.filtered: ST.data;
-          target.forEach(r=> r.gps = true);
-          addLog('ops','ok','GPS 좌표 적용('+target.length+'건)',root);
-          build(container);
-        }},
-      ]);
-    });
-    root.getElementById('m-save')?.addEventListener('click',()=>{
-      const target = ST.filtered.length? ST.filtered: ST.data;
-      const html = '<div class="mini">현재 보이는 항목 '+target.length+'건을 저장합니다.</div>';
-      showModal(root,'일괄 저장', html,[
-        {text:'저장', primary:true, onClick:()=>{ addLog('ops','ok','일괄 저장 완료('+target.length+'건)',root); build(container);}}
-      ]);
-    });
-    root.getElementById('m-csv')?.addEventListener('click',()=>{
-      const html = '<div class="mini">CSV 붙여넣기 (형식: <b>id,value</b> 한 줄씩)</div>'+
-                   '<textarea id="csvtxt" class="in" style="width:100%;height:160px"></textarea>';
-      showModal(root,'CSV 가져오기', html,[
-        {text:'적용', primary:true, onClick:(back,modal)=>{
-          const txt = modal.querySelector('#csvtxt').value.trim();
-          let cnt=0;
-          txt.split(/\r?\n/).forEach(line=>{
-            const [id,val] = line.split(',').map(s=>s && s.trim());
-            const row = ST.data.find(r=> r.id===id);
-            if(row && val && !isNaN(+val)){ row.val = +val; cnt++; }
-          });
-          addLog('ops','ok','CSV 적용: '+cnt+'건 업데이트',root);
-          back.remove(); build(container);
-        }}
-      ]);
-    });
-    root.getElementById('m-sync')?.addEventListener('click',()=>{
-      const html = '<div class="mini">오프라인 데이터 동기화 중…</div><div class="prog"><b id="pbar"></b></div>';
-      const {back,modal} = showModal(root,'오프라인 동기화', html,[
-        {text:'닫기', onClick:()=> back.remove()}
-      ]);
-      let p=0; const bar=modal.querySelector('#pbar');
-      const t=setInterval(()=>{ p=Math.min(100, p+10); bar.style.width=p+'%'; if(p===100){ clearInterval(t); addLog('ops','ok','오프라인 동기화 완료',root);} },150);
-    });
-
-    // KPI popups
-    root.querySelectorAll('.kpi').forEach(card=>{
-      card.addEventListener('click',()=>{
-        const type = card.getAttribute('data-kpi');
-        const rws = ST.filtered.length? ST.filtered: ST.data;
-        if(type==='photo'){
-          const byUtil = ['전기','수도','가스','열량'].map(u=>{
-            const x=rws.filter(r=>r.util===u), ok=x.filter(r=>r.photo==='검증').length;
-            return {u, n:x.length, ok, p: x.length? Math.round(ok/x.length*100):0};
-          });
-          const html = '<div class="grid2">'+
-            byUtil.map(row=>'<div class="kv"><div>'+row.u+'</div><div><b>'+row.p+'%</b> <span class="mini">('+row.ok+'/'+row.n+')</span></div></div>').join('')+
-            '</div>';
-          showModal(root,'사진 검증률 상세', html, [{text:'확인', primary:true, onClick:(b)=>b.remove()}]);
-        }
-        if(type==='last'){
-          const sorted=[...rws].sort((a,b)=> b.dt-a.dt).slice(0,12);
-          const html = '<table style="width:100%;border-collapse:separate;border-spacing:0"><thead>'+
-            '<tr style="background:#f7f9fe"><th style="text-align:left;padding:8px">계량기ID</th><th style="text-align:left;padding:8px">위치</th><th style="text-align:left;padding:8px">시간</th></tr></thead><tbody>'+
-            sorted.map(r=>'<tr><td style="padding:6px" class="mono">'+esc(r.id)+'</td><td style="padding:6px">'+esc(r.complex)+' '+r.dong+'/'+r.ho+'</td><td style="padding:6px" class="mono">'+fmt(r.dt)+'</td></tr>').join('')+
-            '</tbody></table>';
-          showModal(root,'최근 입력 상세', html, [{text:'확인', primary:true, onClick:(b)=>b.remove()}]);
-        }
-        if(type==='rechk'){
-          const bad = rws.filter(r=>r.rechk==='요청');
-          const html = '<div class="mini">재검침 요청 목록 ('+bad.length+'건)</div>'+
-            '<div style="max-height:320px;overflow:auto;margin-top:6px">'+
-            bad.map(r=>'<div class="kv"><div class="mono">'+esc(r.id)+'</div><div>'+esc(r.complex)+' '+r.dong+'/'+r.ho+' · '+fmt(r.dt)+'</div></div>').join('')+
-            '</div>';
-          showModal(root,'재검침 요청 상세', html, [
-            {text:'모두 해제', primary:true, onClick:(back)=>{ bad.forEach(r=> r.rechk='해제'); addLog('rechk','ok','재검침 요청 '+bad.length+'건 해제',root); back.remove(); build(container);} }
-          ]);
-        }
-        if(type==='teams'){
-          const teams=['한강팀','북부팀','서부팀','동부팀'];
-          const html = teams.map(t=>{
-            const xs=rws.filter(r=>r.team===t), ok=xs.filter(r=>r.photo==='검증').length, p=xs.length? Math.round(ok/xs.length*100):0;
-            return '<div class="kv"><div>'+t+'</div><div><div class="prog"><b style="width:'+p+'%"></b></div><div class="mini" style="margin-top:4px">'+p+'% · '+ok+'/'+xs.length+'</div></div></div>';
-          }).join('');
-          showModal(root,'담당부서 처리 상세', '<div class="grid2">'+html+'</div>', [{text:'확인', primary:true, onClick:(b)=>b.remove()}]);
-        }
-      });
-    });
-
-    // Row click popup
-    root.querySelectorAll('tbody tr').forEach(tr=>{
-      tr.addEventListener('click',(e)=>{
-        // avoid when clicking inline action links
-        if(e.target.closest('a[data-act]')) return;
-        const id = tr.getAttribute('data-id');
-        const r = (ST.filtered.length? ST.filtered: ST.data).find(x=>x.id===id);
-        if(!r) return;
-        const history = Array.from({length:5}, (_,i)=>({dt: new Date(r.dt - (i+1)*86400e3), val: r.val - (i+1)*((i%2?3:5))}));
-        const html = '<div class="grid2">'+
-          '<div><div class="kv"><div>계량기ID</div><div class="mono">'+esc(r.id)+'</div></div>'+
-          '<div class="kv"><div>위치</div><div>'+esc(r.complex)+' '+r.dong+'/'+r.ho+'</div></div>'+
-          '<div class="kv"><div>유틸리티</div><div>'+esc(r.util)+'</div></div>'+
-          '<div class="kv"><div>검침시각</div><div class="mono">'+fmt(r.dt)+'</div></div>'+
-          '<div class="kv"><div>입력값</div><div class="mono">'+r.val.toLocaleString()+'</div></div>'+
-          '<div class="kv"><div>담당자</div><div>'+esc(r.staff)+'('+esc(r.team)+')</div></div></div>'+
-          '<div><div class="mini">최근 추세</div><table style="width:100%;margin-top:6px"><thead><tr style="background:#f7f9fe"><th style="text-align:left;padding:6px">날짜</th><th style="text-align:right;padding:6px">값</th></tr></thead><tbody>'+
-          history.map(h=>'<tr><td style="padding:6px" class="mono">'+fmt(h.dt)+'</td><td style="padding:6px;text-align:right" class="mono">'+h.val.toLocaleString()+'</td></tr>').join('')+
-          '</tbody></table></div>'+
-        '</div>';
-        showModal(root,'상세 보기', html, [
-          {text:'GPS 토글', onClick:(back)=>{ r.gps=!r.gps; addLog('ops','ok', r.id+' GPS '+(r.gps?'활성화':'비활성화'), root); build(container);} },
-          {text:'사진 검증', onClick:(back)=>{ r.photo='검증'; addLog('ops','ok', r.id+' 사진 검증 완료', root); build(container);} },
-          {text:'재검침 요청', primary:true, onClick:(back)=>{ r.rechk='요청'; addLog('rechk','rechk', r.id+' 재검침 요청', root); build(container);} },
-        ]);
-      });
-    });
-
-    // Inline action links keep working
-    root.addEventListener('click',(e)=>{
-      const a=e.target.closest && e.target.closest('a[data-act]'); if(!a) return;
-      e.preventDefault();
-      const tr=a.closest('tr'); const id=tr?.getAttribute('data-id'); const rows=ST.filtered.length?ST.filtered:ST.data; const r=rows.find(x=>x.id===id);
-      if(!r) return;
-      const act=a.getAttribute('data-act');
-      if(act==='rechk'){ r.rechk = (r.rechk==='요청')? '해제':'요청'; addLog('rechk', r.rechk==='요청'?'rechk':'ok', r.id+' 재검침 '+(r.rechk==='요청'?'요청':'해제'), root); }
-      if(act==='photook'){ r.photo='검증'; addLog('ops','ok', r.id+' 사진 검증 완료', root); }
-      if(act==='gpstoggle'){ r.gps=!r.gps; addLog('ops','ok', r.id+' GPS '+(r.gps?'활성화':'비활성화'), root); }
-      build(container);
-    }, true);
-  }
-
-  function findHost(){
-    return document.querySelector('.vpage[data-vpage="MTR-102"]')
-        || document.querySelector('.vpage#MTR-102')
-        || document.querySelector('[data-page="MTR-102"]')
-        || document.querySelector('[data-key="MTR-102"]')
-        || null;
-  }
-
-  function ensure(){
-    const host=findHost(); if(!host) return;
-    let node = host.querySelector('#MTR-102-V19');
-    if(!node){ node = document.createElement('section'); node.id='MTR-102-V19'; host.appendChild(node); }
-    build(node);
-  }
-
-  // fast mount loop
-  let tries = 180;
-  function loop(){
-    if (tries-- <= 0) return;
-    const host=findHost();
-    if (host){
-      ensure();
-      return;
-    }
-    requestAnimationFrame(loop);
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded', ()=> { ensure(); loop(); });
-  } else {
-    ensure(); loop();
-  }
-  window.addEventListener('hashchange', ()=> setTimeout(ensure, 100));
-  new MutationObserver(()=> ensure()).observe(document.body, {childList:true,subtree:true});
-})();
-</script>
-<!-- === MTR-102 Overhaul v19 : END === -->
-</body></html>
-
 
 <script id="mtr102-hard-mount-v26">
 (function(){
   if (window.__MTR102_HARD__) return; window.__MTR102_HARD__ = true;
-  var css = document.createElement('style');
+
+  const css = document.createElement('style');
   css.textContent = `
-    .m102-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--border);}
-    .m102-head .in{height:34px;min-width:160px;flex:0 1 220px}
-    .m102-head #m102-q{flex:1 1 260px;min-width:200px}
-    .m102-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:12px;margin:14px 16px;box-shadow:0 1px 0 rgba(10,37,64,.04),0 1px 2px rgba(10,37,64,.08)}
-    .m102-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-    .m102-kpi{background:var(--bg-50,#f8fbff);border:1px solid var(--border);border-radius:12px;padding:10px}
-    .m102-table{width:100%;border-collapse:separate;border-spacing:0 6px}
-    .m102-table td,.m102-table th{padding:8px 10px;background:#fff;border:1px solid var(--border)}
-    .m102-table th{background:var(--bg-50,#f8fbff);font-weight:700}
-    .m102-table tr td:first-child,.m102-table tr th:first-child{border-top-left-radius:10px;border-bottom-left-radius:10px}
-    .m102-table tr td:last-child,.m102-table tr th:last-child{border-top-right-radius:10px;border-bottom-right-radius:10px}
-    .m102-logs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .m102-logbox{background:#fbfdff;border:1px solid var(--border);border-radius:12px;min-height:160px;max-height:260px;overflow:auto;padding:8px}
-    .pill-mini{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:3px 8px;font-size:12px;margin-bottom:6px;background:#fff}
-    .iconbtn{border:1px solid var(--border);border-radius:8px;padding:6px 10px;background:#fff}
+    #MTR-102{padding:16px 16px 24px;display:grid;gap:14px}
+    #MTR-102 .m102-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+    #MTR-102 .m102-header h4{margin:0;font-size:16px;letter-spacing:-.2px}
+    #MTR-102 .m102-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    #MTR-102 .m102-hbtn{height:30px;padding:0 12px;border-radius:10px;border:1px solid var(--border,#e5e7eb);background:linear-gradient(180deg,#fff,#f6f9ff);font-size:12px;font-weight:600;cursor:pointer;transition:box-shadow .2s ease,transform .2s ease}
+    #MTR-102 .m102-hbtn:hover{box-shadow:0 10px 24px rgba(15,23,42,.12);transform:translateY(-1px)}
+    #MTR-102 .m102-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px;border:1px solid var(--border,#e5e7eb);border-radius:14px;background:linear-gradient(180deg,#fff,#f8fbff)}
+    #MTR-102 .m102-input{height:32px;padding:0 12px;border-radius:10px;border:1px solid var(--border,#e5e7eb);background:#fff;font-size:12px;flex:0 1 160px}
+    #MTR-102 #m102-q{flex:1 1 260px;min-width:200px}
+    #MTR-102 select.m102-input{padding-right:28px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%237b8794' d='M2.3 6.4 3.2 5.5 8 10.3l4.8-4.8.9.9L8 12 2.3 6.4l.9-.9z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+    #MTR-102 .m102-card{border:1px solid var(--border,#e5e7eb);border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06);padding:14px}
+    #MTR-102 .m102-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    @media(max-width:1200px){#MTR-102 .m102-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:720px){#MTR-102 .m102-kpi-grid{grid-template-columns:1fr}}
+    #MTR-102 .m102-kpi{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--border,#e5e7eb);border-radius:14px;background:var(--bg-50,#f8fafc);cursor:pointer;transition:box-shadow .2s ease,transform .2s ease}
+    #MTR-102 .m102-kpi:hover{box-shadow:0 12px 30px rgba(15,23,42,.12);transform:translateY(-2px)}
+    #MTR-102 .m102-kpi h6{margin:0 0 6px;font-size:12px;color:#475569;font-weight:700}
+    #MTR-102 .m102-kpi-main{font-size:20px;font-weight:800;letter-spacing:-.2px;color:#0f172a}
+    #MTR-102 .m102-muted{font-size:12px;color:#6b7280}
+    #MTR-102 .m102-ring{--p:0;width:56px;height:56px;border-radius:50%;background:conic-gradient(#2563eb calc(var(--p)*1%),#e2e8f0 0);display:grid;place-items:center;flex:none}
+    #MTR-102 .m102-ring span{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;font:700 12px/1.2 var(--font,system-ui)}
+    #MTR-102 .m102-bar-list{display:grid;gap:8px;width:100%}
+    #MTR-102 .m102-bar{height:8px;border-radius:999px;background:#e2e8f0;overflow:hidden}
+    #MTR-102 .m102-bar b{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#2563eb);width:0%}
+    #MTR-102 .m102-table-wrap{max-height:520px;overflow:auto}
+    #MTR-102 table.m102-table{width:100%;border-collapse:separate;border-spacing:0}
+    #MTR-102 .m102-table thead th{position:sticky;top:0;background:#f8fafc;border-bottom:1px solid var(--border,#e5e7eb);padding:10px;text-align:left;font-size:13px;font-weight:700}
+    #MTR-102 .m102-table tbody td{border-bottom:1px solid var(--border,#e5e7eb);padding:10px;font-size:13px;vertical-align:middle}
+    #MTR-102 .m102-table tbody tr{cursor:pointer}
+    #MTR-102 .m102-table tbody tr:hover{background:#f8fbff}
+    #MTR-102 .m102-tag{display:inline-flex;align-items:center;gap:4px;height:20px;padding:0 8px;border-radius:999px;border:1px solid #e2e8f0;font-size:11px;background:#fff}
+    #MTR-102 .m102-tag.ok{background:#ecfdf5;border-color:#bbf7d0;color:#166534}
+    #MTR-102 .m102-tag.warn{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+    #MTR-102 .m102-tag.bad{background:#fef2f2;border-color:#fecaca;color:#b91c1c}
+    #MTR-102 .m102-qflag{display:inline-flex;align-items:center;gap:6px;font-size:12px}
+    #MTR-102 .m102-qflag .dot{width:8px;height:8px;border-radius:50%;background:#2563eb}
+    #MTR-102 .m102-qflag.b .dot{background:#f59e0b}
+    #MTR-102 .m102-qflag.c .dot{background:#ef4444}
+    #MTR-102 .m102-inline-actions{display:inline-flex;gap:6px;margin-left:6px;font-size:12px}
+    #MTR-102 .m102-inline-actions a{color:#2563eb;text-decoration:none}
+    #MTR-102 .m102-inline-actions a:hover{text-decoration:underline}
+    #MTR-102 .m102-empty{padding:36px 0;text-align:center;font-size:13px;color:#6b7280}
+    #MTR-102 .m102-logs-card{padding:0}
+    #MTR-102 .m102-logs-card header{padding:14px 16px;border-bottom:1px solid var(--border,#e5e7eb);font-size:13px;font-weight:800}
+    #MTR-102 .m102-log-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px 16px}
+    @media(max-width:1020px){#MTR-102 .m102-log-columns{grid-template-columns:1fr}}
+    #MTR-102 .pill-mini{display:inline-flex;align-items:center;gap:6px;height:20px;padding:0 10px;border-radius:999px;border:1px solid var(--border,#e5e7eb);background:#fff;font-size:11px;font-weight:700}
+    #MTR-102 .m102-logbox{background:#fbfdff;border:1px solid var(--border,#e5e7eb);border-radius:12px;height:220px;overflow:auto;padding:10px;font-size:12px}
+    #MTR-102 .m102-logbox .item{display:flex;gap:10px;align-items:center;padding:4px 0}
+    #MTR-102 .m102-logbox .k{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:999px;border:1px solid #bfdbfe;background:#eff6ff;font-size:11px;font-weight:700;letter-spacing:.2px}
+    #MTR-102 .m102-logbox .k.ok{background:#ecfdf5;border-color:#bbf7d0;color:#166534}
+    #MTR-102 .m102-logbox .k.rechk{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+    #MTR-102 .m102-logbox .time{font-variant-numeric:tabular-nums;color:#64748b}
+    .m102-modal-back{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:99999}
+    .m102-modal{width:min(900px,92vw);max-height:86vh;background:#fff;border:1px solid var(--border,#e5e7eb);border-radius:16px;box-shadow:0 20px 60px rgba(15,23,42,.28);display:flex;flex-direction:column}
+    .m102-modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border,#e5e7eb)}
+    .m102-modal-head h5{margin:0;font-size:16px}
+    .m102-modal-body{padding:16px;overflow:auto;font-size:13px;line-height:1.6}
+    .m102-modal-actions{padding:12px 16px;display:flex;justify-content:flex-end;gap:8px;border-top:1px solid var(--border,#e5e7eb)}
+    .m102-btn{height:32px;padding:0 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;font-size:12px;font-weight:600;cursor:pointer}
+    .m102-btn.primary{background:#2563eb;border-color:#1d4ed8;color:#fff}
+    .m102-progress{margin-top:12px;height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+    .m102-progress b{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#2563eb);width:0%}
+    .m102-mini{font-size:12px;color:#64748b}
+    .mono{font-variant-numeric:tabular-nums;font-family:"Roboto Mono","D2Coding",monospace}
+    .m102-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:720px){.m102-grid-2{grid-template-columns:1fr}}
+    .m102-kv{display:grid;grid-template-columns:140px 1fr;gap:8px;align-items:center}
+    @media(max-width:600px){.m102-kv{grid-template-columns:1fr}}
+    .m102-modal-body table{width:100%;border-collapse:separate;border-spacing:0}
+    .m102-modal-body thead th{background:#f8fafc;font-weight:700;padding:6px 8px;text-align:left;font-size:12px}
+    .m102-modal-body td{border-bottom:1px solid #e5e7eb;padding:6px 8px;font-size:12px}
   `;
   document.head.appendChild(css);
 
-  function id(x){ return document.getElementById(x); }
-  function z(n){return (n<10?'0':'')+n}
-  function ts(){ var d=new Date();return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+' '+z(d.getHours())+':'+z(d.getMinutes())+':'+z(d.getSeconds()); }
+  const COMPLEX = ['래미안A','푸르지오B','자이C','힐스D','아이파크E'];
+  const UTILS = ['전기','수도','가스','열량'];
+  const DONG = [101,102,103,104,105,106];
+  const HO = [101,102,201,202,301,302,401,402];
+  const STAFFS = ['김담당','이주무','박기사','최관리','정운영'];
+  const BATCHES = ['1차','2차','3차'];
+  const TEAM_BY_STAFF = {'김담당':'한강팀','이주무':'북부팀','박기사':'서부팀','최관리':'동부팀','정운영':'북부팀'};
+  const TEAMS = Array.from(new Set(Object.values(TEAM_BY_STAFF)));
+
+  const z = n => (''+n).padStart(2,'0');
+  const fmt = d => {
+    try{
+      if(!(d instanceof Date)) d = new Date(d);
+      if(Number.isNaN(d.getTime())) return String(d);
+      return `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())} ${z(d.getHours())}:${z(d.getMinutes())}:${z(d.getSeconds())}`;
+    }catch(err){
+      return String(d);
+    }
+  };
+  const esc = str => String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]));
+
+  function gen(n=96){
+    const now = Date.now();
+    const out=[];
+    for(let i=0;i<n;i++){
+      const util = UTILS[i%UTILS.length];
+      const cx = COMPLEX[i%COMPLEX.length];
+      const dong = DONG[i%DONG.length];
+      const ho = HO[i%HO.length];
+      const staff = STAFFS[i%STAFFS.length];
+      out.push({
+        id: (util==='전기'?'E':util==='수도'?'W':util==='가스'?'G':'H')+'-'+(100100+i),
+        complex: cx,
+        dong,
+        ho,
+        util,
+        dt: new Date(now - (i+2)*3600e3),
+        val: 1000 + ((i*7)%320) + i,
+        photo: (i%10===0?'재촬영':(i%6===0?'보류':'검증')),
+        gps: (i%3)!==0,
+        qual: ['A','A','B','A','A','B','A','C','A','B'][i%10],
+        memo: (i%13===0?'계량기함 잠김':(i%11===0?'사진 재촬영 요청':'')),
+        staff,
+        team: TEAM_BY_STAFF[staff],
+        batch: BATCHES[i%BATCHES.length],
+        rechk: (i%6===0?'요청':(i%10===0?'해제':''))
+      });
+    }
+    return out;
+  }
+
+  const STATE = {
+    data: gen(96),
+    filters: { q:'', util:'', complex:'', dong:'', ho:'', staff:'', batch:'', rechk:'' },
+    logs: {
+      ops: [
+        { tag:'ok', msg:'초기 동기화 완료', time:new Date(Date.now()-7200e3) },
+        { tag:'ok', msg:'사진 업로드 완료(5건)', time:new Date(Date.now()-5400e3) }
+      ],
+      rechk: [
+        { tag:'rechk', msg:'E-100118 재검침 요청', time:new Date(Date.now()-3600e3) }
+      ]
+    }
+  };
+
+  let CURRENT_HOST = null;
+  let CURRENT_SECTION = null;
+  let mounted = false;
 
   function ensureHost(){
-    var host = document.querySelector('.vpage[data-vpage="MTR-102"]');
-    if (!host){
-      var vc = document.querySelector('.vcontent');
+    let host = document.querySelector('.vpage[data-vpage="MTR-102"]');
+    if(!host){
+      const vc = document.querySelector('.vcontent');
       if(!vc) return null;
-      host = document.createElement('div'); host.className='vpage'; host.setAttribute('data-vpage','MTR-102');
+      host = document.createElement('div');
+      host.className = 'vpage';
+      host.setAttribute('data-vpage','MTR-102');
       vc.appendChild(host);
     }
     return host;
   }
 
-  function draw(host){
-    host.innerHTML = '';
-    var head = document.createElement('div'); head.className='m102-head';
-    head.innerHTML = '<input id="m102-q" class="in" placeholder="계량기ID/주소/메모 검색">'+
-                     '<select class="in m102-select"><option>단지 전체</option></select>'+
-                     '<select class="in m102-select"><option>동 전체</option></select>'+
-                     '<select class="in m102-select"><option>호 전체</option></select>'+
-                     '<select class="in m102-select"><option>담당자 전체</option></select>'+
-                     '<select class="in m102-select"><option>배치 전체</option></select>'+
-                     '<select class="in m102-select"><option>재검침 여부 전체</option></select>'+
-                     '<button id="m102-upload" class="iconbtn">사진 업로드</button>'+
-                     '<button id="m102-gps" class="iconbtn">GPS 캡처</button>'+
-                     '<button id="m102-save" class="iconbtn">일괄 저장</button>'+
-                     '<button id="m102-csv" class="iconbtn">CSV 가져오기</button>'+
-                     '<button id="m102-sync" class="iconbtn">오프라인 동기화</button>';
-    host.appendChild(head);
-
-    var kpis = document.createElement('section'); kpis.className='m102-card';
-    kpis.innerHTML = '<div class="m102-kpis">'+
-      '<div class="m102-kpi"><div>오프라인 대기건</div><b>1건</b></div>'+
-      '<div class="m102-kpi"><div>재검침 요청건</div><b>4건</b></div>'+
-      '<div class="m102-kpi"><div>사진 검증상태</div><b>86%</b></div>'+
-      '<div class="m102-kpi"><div>GPS 상태</div><b>정상</b></div>'+
-    '</div>';
-    host.appendChild(kpis);
-
-    var tableWrap = document.createElement('section'); tableWrap.className='m102-card';
-    tableWrap.innerHTML = '<table class="m102-table"><thead><tr><th>계량기ID</th><th>주소</th><th>검침시각</th><th>입력값</th><th>사진</th><th>GPS</th><th>품질</th><th>메모</th></tr></thead>'+
-      '<tbody id="m102-tbody">'+
-      '<tr><td>가스-0000</td><td>푸르지오C 105동 101호</td><td>2025-11-06 14:08:39</td><td>1,224</td><td>검증</td><td>없음</td><td>오류</td><td></td></tr>'+
-      '<tr><td>가스-0001</td><td>래미안B 105동 1101호</td><td>2025-11-05 16:08:39</td><td>1,265</td><td>검증</td><td>GPS</td><td>B</td><td></td></tr>'+
-      '</tbody></table>';
-    host.appendChild(tableWrap);
-
-    var logs = document.createElement('section'); logs.className='m102-card';
-    logs.innerHTML = '<h6 style="margin:0 0 8px 0;font:800 13px var(--font)">이벤트/로그</h6>'+
-      '<div class="m102-logs">'+
-      '<div class="col"><div class="pill-mini">작업 로그</div><div id="m102-log1" class="m102-logbox"></div></div>'+
-      '<div class="col"><div class="pill-mini">푸시 로그</div><div id="m102-log2" class="m102-logbox"></div></div>'+
-      '</div>';
-    host.appendChild(logs);
-
-    function log(s){ var d=document.createElement('div'); d.textContent=ts()+' '+s; var box=document.getElementById('m102-log1'); if(box){box.appendChild(d)} }
-    head.querySelector('#m102-save').addEventListener('click', function(){ log('일괄 저장 실행'); });
+  function getRows(){
+    const f = STATE.filters;
+    const q = (f.q||'').trim().toLowerCase();
+    return STATE.data.filter(row=>{
+      if(q){
+        const key = (row.id+' '+row.complex+' '+row.dong+' '+row.ho+' '+(row.memo||'')).toLowerCase();
+        if(!key.includes(q)) return false;
+      }
+      if(f.util && row.util!==f.util) return false;
+      if(f.complex && row.complex!==f.complex) return false;
+      if(f.dong && String(row.dong)!==f.dong) return false;
+      if(f.ho && String(row.ho)!==f.ho) return false;
+      if(f.staff && row.staff!==f.staff) return false;
+      if(f.batch && row.batch!==f.batch) return false;
+      if(f.rechk && row.rechk!==f.rechk) return false;
+      return true;
+    });
   }
 
-  function mount(){ var host = ensureHost(); if(host){ draw(host); } }
+  function unique(key){
+    const set = new Set();
+    STATE.data.forEach(row=>{
+      const val = key==='dong' || key==='ho' ? String(row[key]) : row[key];
+      if(val!==undefined && val!==null && val!=='') set.add(String(val));
+    });
+    const arr = Array.from(set);
+    if(key==='dong' || key==='ho') arr.sort((a,b)=>Number(a)-Number(b)); else arr.sort();
+    return arr;
+  }
 
-  document.addEventListener('click', function(e){
-    var btn = e.target.closest && e.target.closest('.mid[data-mid="MTR-102"]');
-    if(!btn) return;
+  function buildOptions(values, current, placeholder){
+    const opts = [`<option value="">${placeholder}</option>`];
+    values.forEach(v=>{
+      const val = esc(v);
+      const sel = current===v ? ' selected' : '';
+      opts.push(`<option value="${val}"${sel}>${val}</option>`);
+    });
+    return opts.join('');
+  }
+
+  function toolbarHTML(){
+    const f = STATE.filters;
+    const utilOpts = buildOptions(unique('util'), f.util, '유틸리티 전체');
+    const cxOpts = buildOptions(unique('complex'), f.complex, '단지 전체');
+    const dongOpts = buildOptions(unique('dong'), f.dong, '동 전체');
+    const hoOpts = buildOptions(unique('ho'), f.ho, '호 전체');
+    const staffOpts = buildOptions(unique('staff'), f.staff, '담당자 전체');
+    const batchOpts = buildOptions(unique('batch'), f.batch, '배치 전체');
+    const rechkOpts = buildOptions(unique('rechk'), f.rechk, '재검침 전체');
+    return `
+      <div class="m102-toolbar">
+        <input class="m102-input" id="m102-q" placeholder="계량기ID/주소/메모 검색" value="${esc(f.q)}" />
+        <select class="m102-input" id="m102-util">${utilOpts}</select>
+        <select class="m102-input" id="m102-complex">${cxOpts}</select>
+        <select class="m102-input" id="m102-dong">${dongOpts}</select>
+        <select class="m102-input" id="m102-ho">${hoOpts}</select>
+        <select class="m102-input" id="m102-staff">${staffOpts}</select>
+        <select class="m102-input" id="m102-batch">${batchOpts}</select>
+        <select class="m102-input" id="m102-rechk">${rechkOpts}</select>
+      </div>
+    `;
+  }
+
+  function kpiHTML(rows){
+    const total = rows.length;
+    const verified = rows.filter(r=>r.photo==='검증').length;
+    const pct = total ? Math.round(verified/total*100) : 0;
+    const lastRow = rows.slice().sort((a,b)=>b.dt - a.dt)[0];
+    const lastText = lastRow ? fmt(lastRow.dt) : '-';
+    const rechkCnt = rows.filter(r=>r.rechk==='요청').length;
+    const teamStats = TEAMS.map(team=>{
+      const subset = rows.filter(r=>r.team===team);
+      const ok = subset.filter(r=>r.photo==='검증').length;
+      const p = subset.length ? Math.round(ok/subset.length*100) : 0;
+      return { team, ok, total:subset.length, pct:p };
+    });
+    return `
+      <section class="m102-card">
+        <div class="m102-kpi-grid">
+          <article class="m102-kpi" data-kpi="photo">
+            <div class="m102-ring" style="--p:${pct}"><span>${pct}%</span></div>
+            <div>
+              <h6>사진 검증률</h6>
+              <div class="m102-kpi-main">${pct}%</div>
+              <div class="m102-muted">총 ${total}건 중 검증 ${verified}건</div>
+            </div>
+          </article>
+          <article class="m102-kpi" data-kpi="last">
+            <div>
+              <h6>최근 입력시각</h6>
+              <div class="m102-kpi-main">${esc(lastText)}</div>
+              <div class="m102-muted">가장 최근 입력</div>
+            </div>
+          </article>
+          <article class="m102-kpi" data-kpi="rechk">
+            <div>
+              <h6>재검침 요청</h6>
+              <div class="m102-kpi-main">${rechkCnt}건</div>
+              <div class="m102-muted">최근 24시간 기준</div>
+            </div>
+          </article>
+          <article class="m102-kpi" data-kpi="teams">
+            <div>
+              <h6>담당부서 처리현황</h6>
+              <div class="m102-bar-list">
+                ${teamStats.map(t=>`<div class="row"><div class="m102-bar"><b style="width:${t.pct}%"></b></div><span class="m102-muted">${t.pct}%</span></div>`).join('')}
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    `;
+  }
+
+  function tableHTML(rows){
+    const body = rows.length ? rows.map(r=>{
+      const photo = r.photo==='검증' ? '<span class="m102-tag ok">검증</span>' : (r.photo==='보류' ? '<span class="m102-tag warn">보류</span>' : '<span class="m102-tag bad">재촬영</span>');
+      const gps = r.gps ? '<span class="m102-tag ok">GPS</span>' : '<span class="m102-tag">없음</span>';
+      const qcls = r.qual==='A' ? 'm102-qflag a' : r.qual==='B' ? 'm102-qflag b' : 'm102-qflag c';
+      const qflag = `<span class="${qcls}"><span class="dot"></span><span>${esc(r.qual)}</span></span>`;
+      const memo = r.memo ? esc(r.memo) : '';
+      return `
+        <tr data-id="${esc(r.id)}">
+          <td><b>${esc(r.id)}</b></td>
+          <td>${esc(r.complex)} ${esc(r.dong)}/${esc(r.ho)}</td>
+          <td>${esc(r.util)}</td>
+          <td class="mono">${fmt(r.dt)}</td>
+          <td class="mono">${r.val.toLocaleString()}</td>
+          <td>${photo}</td>
+          <td>${gps}</td>
+          <td>${qflag}</td>
+          <td>${memo}<span class="m102-inline-actions"><a href="#" data-act="rechk">재검침</a><a href="#" data-act="photook">사진확정</a><a href="#" data-act="gpstoggle">GPS</a></span></td>
+        </tr>
+      `;
+    }).join('') : '<tr><td class="m102-empty" colspan="9">조건에 맞는 데이터가 없습니다.</td></tr>';
+    return `
+      <section class="m102-card">
+        <div class="m102-table-wrap">
+          <table class="m102-table">
+            <thead>
+              <tr>
+                <th>계량기ID</th>
+                <th>단지/동/호</th>
+                <th>유틸리티</th>
+                <th>검침시각</th>
+                <th>입력값</th>
+                <th>사진</th>
+                <th>GPS</th>
+                <th>품질</th>
+                <th>메모 / 작업</th>
+              </tr>
+            </thead>
+            <tbody id="m102-tbody">${body}</tbody>
+          </table>
+        </div>
+      </section>
+    `;
+  }
+
+  function logsHTML(){
+    return `
+      <section class="m102-card m102-logs-card">
+        <header>이벤트/로그</header>
+        <div class="m102-log-columns">
+          <div>
+            <div class="pill-mini">작업 로그</div>
+            <div id="m102-log-ops" class="m102-logbox"></div>
+          </div>
+          <div>
+            <div class="pill-mini">재검침 로그</div>
+            <div id="m102-log-rechk" class="m102-logbox"></div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderLogs(section){
+    if(!section) return;
+    const opsBox = section.querySelector('#m102-log-ops');
+    const rechkBox = section.querySelector('#m102-log-rechk');
+    if(opsBox){
+      opsBox.innerHTML = STATE.logs.ops.map(entry=>`<div class="item"><span class="k ok">${entry.tag.toUpperCase()}</span><span class="time mono">${fmt(entry.time)}</span><span>${esc(entry.msg)}</span></div>`).join('');
+      opsBox.scrollTop = opsBox.scrollHeight;
+    }
+    if(rechkBox){
+      rechkBox.innerHTML = STATE.logs.rechk.map(entry=>`<div class="item"><span class="k ${entry.tag==='rechk'?'rechk':'ok'}">${entry.tag.toUpperCase()}</span><span class="time mono">${fmt(entry.time)}</span><span>${esc(entry.msg)}</span></div>`).join('');
+      rechkBox.scrollTop = rechkBox.scrollHeight;
+    }
+  }
+
+  function addLog(kind, tag, msg){
+    const target = kind==='rechk' ? STATE.logs.rechk : STATE.logs.ops;
+    target.push({ tag, msg, time:new Date() });
+    if(target.length>120) target.shift();
+    if(CURRENT_SECTION){
+      setTimeout(()=>renderLogs(CURRENT_SECTION),0);
+    }
+  }
+
+  function openModal(title, bodyHTML, actions, onClose){
+    const back = document.createElement('div');
+    back.className = 'm102-modal-back';
+    back.innerHTML = `
+      <div class="m102-modal" role="dialog" aria-modal="true">
+        <header class="m102-modal-head"><h5>${esc(title)}</h5><button type="button" class="m102-btn" id="m102-modal-close">닫기</button></header>
+        <div class="m102-modal-body">${bodyHTML}</div>
+        <div class="m102-modal-actions"></div>
+      </div>`;
+    document.body.appendChild(back);
+    const modal = back.querySelector('.m102-modal');
+    const closeBtn = modal.querySelector('#m102-modal-close');
+    const foot = modal.querySelector('.m102-modal-actions');
+    const close = ()=>{
+      if(onClose) onClose();
+      back.remove();
+    };
+    closeBtn.addEventListener('click', close);
+    back.addEventListener('click', (e)=>{ if(e.target===back) close(); });
+    (actions||[]).forEach(action=>{
+      const btn = document.createElement('button');
+      btn.className = 'm102-btn'+(action.primary?' primary':'');
+      btn.textContent = action.text;
+      btn.addEventListener('click', ()=> action.onClick?.(close, modal));
+      foot.appendChild(btn);
+    });
+    return { close, modal };
+  }
+
+  function bindFilters(section){
+    const map = [
+      ['#m102-q','q','input'],
+      ['#m102-util','util','change'],
+      ['#m102-complex','complex','change'],
+      ['#m102-dong','dong','change'],
+      ['#m102-ho','ho','change'],
+      ['#m102-staff','staff','change'],
+      ['#m102-batch','batch','change'],
+      ['#m102-rechk','rechk','change']
+    ];
+    map.forEach(([sel,key,evt])=>{
+      const el = section.querySelector(sel);
+      if(!el) return;
+      el.value = STATE.filters[key] || '';
+      el.addEventListener(evt, ()=>{
+        STATE.filters[key] = el.value || '';
+        draw();
+      });
+    });
+  }
+
+  function bindHeaderButtons(section){
+    section.querySelector('#m102-upload')?.addEventListener('click',()=>{
+      const { close, modal } = openModal('사진 업로드', `
+        <div class="m102-mini">여러 장의 사진을 선택하세요 (목업)</div>
+        <input id="m102-filepick" type="file" multiple accept="image/*" class="m102-input" style="width:100%;margin-top:8px" />
+        <div id="m102-fileinfo" class="m102-mini" style="margin-top:8px">0개의 파일 선택됨</div>
+      `,[
+        { text:'업로드', primary:true, onClick:(closeFn, mdl)=>{
+            const count = mdl.querySelector('#m102-filepick')?.files?.length || 0;
+            addLog('ops','ok',`사진 업로드 완료(${count}건)`);
+            closeFn();
+          }
+        }
+      ]);
+      modal.querySelector('#m102-filepick')?.addEventListener('change',(e)=>{
+        const n = e.target.files ? e.target.files.length : 0;
+        const info = modal.querySelector('#m102-fileinfo');
+        if(info) info.textContent = `${n}개의 파일 선택됨`;
+      });
+    });
+
+    section.querySelector('#m102-gps')?.addEventListener('click',()=>{
+      const lat = (37.45 + Math.random()*0.6).toFixed(6);
+      const lon = (126.8 + Math.random()*0.6).toFixed(6);
+      const target = getRows();
+      openModal('GPS 캡처', `
+        <div class="m102-grid-2">
+          <div class="m102-kv"><div>위도</div><div class="mono">${lat}</div></div>
+          <div class="m102-kv"><div>경도</div><div class="mono">${lon}</div></div>
+        </div>
+        <div class="m102-mini" style="margin-top:8px">현재 좌표를 필터 결과 ${target.length}건에 적용합니다.</div>
+      `,[
+        { text:'좌표 적용', primary:true, onClick:(closeFn)=>{
+            target.forEach(row=> row.gps = true);
+            addLog('ops','ok',`GPS 좌표 적용(${target.length}건)`);
+            draw();
+            closeFn();
+          }
+        }
+      ]);
+    });
+
+    section.querySelector('#m102-save')?.addEventListener('click',()=>{
+      const target = getRows();
+      openModal('일괄 저장', `<div class="m102-mini">현재 표시된 ${target.length}건을 저장합니다.</div>`,[
+        { text:'저장', primary:true, onClick:(closeFn)=>{
+            addLog('ops','ok',`일괄 저장 완료(${target.length}건)`);
+            closeFn();
+          }
+        }
+      ]);
+    });
+
+    section.querySelector('#m102-csv')?.addEventListener('click',()=>{
+      const { close, modal } = openModal('CSV 가져오기', `
+        <div class="m102-mini">CSV 붙여넣기 (형식: <b>id,value</b>)</div>
+        <textarea id="m102-csv-text" class="m102-input" style="width:100%;height:160px;margin-top:8px"></textarea>
+      `,[
+        { text:'적용', primary:true, onClick:(closeFn, mdl)=>{
+            const txt = mdl.querySelector('#m102-csv-text')?.value || '';
+            let cnt = 0;
+            txt.trim().split(/\r?\n/).forEach(line=>{
+              const [id,val] = line.split(',').map(s=>s && s.trim());
+              const row = STATE.data.find(r=>r.id===id);
+              if(row && val && !Number.isNaN(+val)){
+                row.val = Number(val);
+                cnt++;
+              }
+            });
+            addLog('ops','ok',`CSV 적용: ${cnt}건 업데이트`);
+            draw();
+            closeFn();
+          }
+        }
+      ]);
+    });
+
+    section.querySelector('#m102-sync')?.addEventListener('click',()=>{
+      let timer;
+      const { close, modal } = openModal('오프라인 동기화', `
+        <div class="m102-mini">오프라인 데이터 동기화 중...</div>
+        <div class="m102-progress"><b id="m102-sync-bar"></b></div>
+      `,[
+        { text:'닫기', onClick:(closeFn)=>{ closeFn(); } }
+      ], ()=>{ if(timer) clearInterval(timer); });
+      const bar = modal.querySelector('#m102-sync-bar');
+      let p = 0;
+      timer = setInterval(()=>{
+        p = Math.min(100, p+10);
+        if(bar) bar.style.width = p+'%';
+        if(p===100){
+          clearInterval(timer);
+          addLog('ops','ok','오프라인 동기화 완료');
+        }
+      },180);
+    });
+  }
+
+  function bindKpis(section){
+    section.querySelectorAll('.m102-kpi').forEach(card=>{
+      card.addEventListener('click',()=>{
+        const type = card.getAttribute('data-kpi');
+        const rows = getRows();
+        if(type==='photo'){
+          const html = `
+            <div class="m102-grid-2">
+              ${UTILS.map(util=>{
+                const subset = rows.filter(r=>r.util===util);
+                const ok = subset.filter(r=>r.photo==='검증').length;
+                const pct = subset.length ? Math.round(ok/subset.length*100) : 0;
+                return `<div class="m102-kv"><div>${util}</div><div><div class="m102-progress"><b style="width:${pct}%"></b></div><div class="m102-mini" style="margin-top:6px">${pct}% · ${ok}/${subset.length}</div></div></div>`;
+              }).join('')}
+            </div>`;
+          openModal('사진 검증률 상세', html,[{ text:'확인', primary:true, onClick:close=>close() }]);
+        }
+        if(type==='last'){
+          const items = rows.slice().sort((a,b)=>b.dt-a.dt).slice(0,12);
+          const html = `
+            <table class="mini">
+              <thead><tr><th style="text-align:left;padding:6px">계량기ID</th><th style="text-align:left;padding:6px">위치</th><th style="text-align:left;padding:6px">시간</th></tr></thead>
+              <tbody>
+                ${items.map(r=>`<tr><td class="mono" style="padding:6px">${esc(r.id)}</td><td style="padding:6px">${esc(r.complex)} ${esc(r.dong)}/${esc(r.ho)}</td><td class="mono" style="padding:6px">${fmt(r.dt)}</td></tr>`).join('')}
+              </tbody>
+            </table>`;
+          openModal('최근 입력 상세', html,[{ text:'확인', primary:true, onClick:close=>close() }]);
+        }
+        if(type==='rechk'){
+          const bad = rows.filter(r=>r.rechk==='요청');
+          const html = bad.length ? `<div class="m102-mini">재검침 요청 ${bad.length}건</div><div style="max-height:320px;overflow:auto;margin-top:8px">${bad.map(r=>`<div class="m102-kv"><div class="mono">${esc(r.id)}</div><div>${esc(r.complex)} ${esc(r.dong)}/${esc(r.ho)} · ${fmt(r.dt)}</div></div>`).join('')}</div>` : '<div class="m102-mini">재검침 요청 항목이 없습니다.</div>';
+          openModal('재검침 요청 상세', html, bad.length ? [
+            { text:'모두 해제', primary:true, onClick:(closeFn)=>{
+                bad.forEach(r=> r.rechk='해제');
+                addLog('rechk','ok',`재검침 요청 ${bad.length}건 해제`);
+                draw();
+                closeFn();
+              }
+            }
+          ] : [{ text:'확인', primary:true, onClick:close=>close() }]);
+        }
+        if(type==='teams'){
+          const html = `<div class="m102-grid-2">${TEAMS.map(team=>{
+            const subset = rows.filter(r=>r.team===team);
+            const ok = subset.filter(r=>r.photo==='검증').length;
+            const pct = subset.length ? Math.round(ok/subset.length*100) : 0;
+            return `<div class="m102-kv"><div>${team}</div><div><div class="m102-progress"><b style="width:${pct}%"></b></div><div class="m102-mini" style="margin-top:6px">${pct}% · ${ok}/${subset.length}</div></div></div>`;
+          }).join('')}</div>`;
+          openModal('담당부서 처리 상세', html,[{ text:'확인', primary:true, onClick:close=>close() }]);
+        }
+      });
+    });
+  }
+
+  function showRowModal(row){
+    const history = Array.from({length:5}, (_,i)=>({ dt:new Date(row.dt - (i+1)*86400e3), val: row.val - (i+1)*((i%2?3:5)) }));
+    const html = `
+      <div class="m102-grid-2">
+        <div>
+          <div class="m102-kv"><div>계량기ID</div><div class="mono">${esc(row.id)}</div></div>
+          <div class="m102-kv"><div>위치</div><div>${esc(row.complex)} ${esc(row.dong)}/${esc(row.ho)}</div></div>
+          <div class="m102-kv"><div>유틸리티</div><div>${esc(row.util)}</div></div>
+          <div class="m102-kv"><div>검침시각</div><div class="mono">${fmt(row.dt)}</div></div>
+          <div class="m102-kv"><div>입력값</div><div class="mono">${row.val.toLocaleString()}</div></div>
+          <div class="m102-kv"><div>담당자</div><div>${esc(row.staff)} (${esc(row.team)})</div></div>
+        </div>
+        <div>
+          <div class="m102-mini">최근 추세</div>
+          <table class="mini" style="margin-top:6px">
+            <thead><tr><th style="text-align:left;padding:6px">날짜</th><th style="text-align:right;padding:6px">값</th></tr></thead>
+            <tbody>${history.map(h=>`<tr><td class="mono" style="padding:6px">${fmt(h.dt)}</td><td class="mono" style="padding:6px;text-align:right">${h.val.toLocaleString()}</td></tr>`).join('')}</tbody>
+          </table>
+        </div>
+      </div>`;
+    openModal('상세 보기', html,[
+      { text:'GPS 토글', onClick:(closeFn)=>{
+          row.gps = !row.gps;
+          addLog('ops','ok',`${row.id} GPS ${row.gps?'활성화':'비활성화'}`);
+          draw();
+        }
+      },
+      { text:'사진 검증', onClick:()=>{
+          row.photo = '검증';
+          addLog('ops','ok',`${row.id} 사진 검증 완료`);
+          draw();
+        }
+      },
+      { text:'재검침 요청', primary:true, onClick:(closeFn)=>{
+          row.rechk = '요청';
+          addLog('rechk','rechk',`${row.id} 재검침 요청`);
+          draw();
+          closeFn();
+        }
+      }
+    ]);
+  }
+
+  function bindTable(section){
+    const tbody = section.querySelector('#m102-tbody');
+    if(!tbody) return;
+    tbody.addEventListener('click',(e)=>{
+      const link = e.target.closest('a[data-act]');
+      const tr = e.target.closest('tr[data-id]');
+      if(!tr) return;
+      const id = tr.getAttribute('data-id');
+      const row = STATE.data.find(r=>r.id===id);
+      if(!row) return;
+      if(link){
+        e.preventDefault();
+        const act = link.getAttribute('data-act');
+        if(act==='rechk'){
+          row.rechk = row.rechk==='요청' ? '해제' : '요청';
+          addLog('rechk', row.rechk==='요청'?'rechk':'ok', `${row.id} 재검침 ${row.rechk==='요청'?'요청':'해제'}`);
+          draw();
+        } else if(act==='photook'){
+          row.photo = '검증';
+          addLog('ops','ok',`${row.id} 사진 검증 완료`);
+          draw();
+        } else if(act==='gpstoggle'){
+          row.gps = !row.gps;
+          addLog('ops','ok',`${row.id} GPS ${row.gps?'활성화':'비활성화'}`);
+          draw();
+        }
+        return;
+      }
+      showRowModal(row);
+    });
+  }
+
+  function layoutHTML(rows){
+    return `
+      <section class="widget" id="MTR-102">
+        <header class="m102-header">
+          <h4>수동검침 입력(사진·GPS·오프라인)</h4>
+          <div class="m102-actions">
+            <button class="m102-hbtn" id="m102-upload">사진 업로드</button>
+            <button class="m102-hbtn" id="m102-gps">GPS 캡처</button>
+            <button class="m102-hbtn" id="m102-save">일괄 저장</button>
+            <button class="m102-hbtn" id="m102-csv">CSV 가져오기</button>
+            <button class="m102-hbtn" id="m102-sync">오프라인 동기화</button>
+          </div>
+        </header>
+        ${toolbarHTML()}
+        ${kpiHTML(rows)}
+        ${tableHTML(rows)}
+        ${logsHTML()}
+      </section>
+    `;
+  }
+
+  function draw(){
+    const host = ensureHost();
+    if(!host) return;
+    CURRENT_HOST = host;
+    const rows = getRows();
+    host.innerHTML = layoutHTML(rows);
+    const section = host.querySelector('#MTR-102');
+    CURRENT_SECTION = section;
+    bindFilters(section);
+    bindHeaderButtons(section);
+    bindKpis(section);
+    bindTable(section);
+    renderLogs(section);
+  }
+
+  function mount(){
+    draw();
+    mounted = true;
+  }
+
+  document.addEventListener('click',(e)=>{
+    const mid = e.target.closest && e.target.closest('.mid[data-mid="MTR-102"]');
+    if(!mid) return;
     setTimeout(mount,0);
-  }, true);
+  },true);
 
-  if (location.hash && location.hash.indexOf('MTR-102')>-1){ setTimeout(mount,0); }
+  if(location.hash && location.hash.includes('MTR-102')){
+    setTimeout(mount,0);
+  }
 
-  new MutationObserver(function(){ 
-    var host = document.querySelector('.vpage[data-vpage="MTR-102"]');
-    if(host && !host.__drawn__){ mount(); host.__drawn__=true; }
+  new MutationObserver(()=>{
+    if(!mounted && ensureHost()) mount();
   }).observe(document.body,{childList:true,subtree:true});
 })();
 </script>
-
 
 <!-- BEGIN: patch-mtr101-modal-actions-v2 -->
 <script id="patch-mtr101-modal-actions-v2">
@@ -5534,3 +4612,6 @@ function bootMTRPage(){
 })();
 </script>
 <!-- END: patch-mtr101-modal-actions-v2 -->
+
+</body>
+</html>
